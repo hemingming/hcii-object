@@ -1,0 +1,86 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            <h2><strong>帐户安全</strong></h2> 
+            <ul class="user-menu user-safety">
+                <li class="on">修改登录密码</li>
+                <li>修改交易密码</li>
+                <li>找回交易密码</li>
+            </ul>
+
+            <div class="error" id="error">{{error}}</div>
+            <div class="param user-safety">
+                <dl>
+                    <dt>修改帐号登录密码？</dt>
+                    <dd><label>原登录密码：</label> <input type="password" name="back-password" placeholder="输入原登录密码" id="login-ypass"></dd>
+                    <dd><label>新登录密码：</label> <input type="password" name="new-password" placeholder="设置新登录密码" id="login-npass"></dd>
+                    <dd><label>确认新密码：</label> <input type="password" name="sure-password" placeholder="确认新登录密码" id="login-spass"></dd>
+                    <dd><button class="hc-buy" id="mod-login">修改登录密码</button></dd>
+                </dl>
+                <ul class="reminder">
+                    <li>温馨提示:</li>
+                    <li>•如果您更改登录密码请牢记，方便登录帐号。</li>
+                    <li>•在过程中遇到的任何问题，请致电花橙金融4000-267-555咨询。</li>
+                </ul>
+            </div>
+            <div class="param user-safety hide">
+                <dl>
+                    <dt>修改交易密码？</dt>
+                    <dd><label>原交易密码：</label> <input type="password" name="back-password" placeholder="输入原交易密码" id="pay-ypass"></dd>
+                    <dd><label>新交易密码：</label> <input type="password" name="new-password" placeholder="设置新交易密码"  id="pay-npass"></dd>
+                    <dd><label>确认新密码：</label> <input type="password" name="sure-password" placeholder="确认新交易密码" id="pay-spass"></dd>
+                    <dd><button class="hc-buy" id="mod-pay">修改交易密码</button></dd>
+                </dl>
+                <ul class="reminder">
+                    <li>温馨提示:</li>
+                    <li>•为保障您的资金安全，支付时需要使用交易密码，以确认操作是由您本人进行的。</li>
+                    <li>•请您设置并牢记交易密码，切勿泄露和告诉他人。</li>
+                    <li>•在过程中遇到的任何问题，请致电花橙金融4000-267-555咨询。</li>
+                </ul>
+            </div>
+            <div class="param user-safety hide">
+                <dl>
+                    <dt>找回交易密码？</dt>
+                    <dd><label>已绑定手机：</label> <b>{{mobile}}</b></dd>
+                    <dd><label>短信验证码：</label> <input type="text" name="send-code" placeholder="输入验证码" class="send" id="authcode"> <button class="hc-sale send-code" id="send-code" data="{{mobilecode}}">发送验证码</button></dd>
+                    <dd><label>新交易密码：</label> <input type="password" name="new-password" placeholder="设置新交易密码"  id="get-npass"></dd>
+                    <dd><label>确认新密码：</label> <input type="password" name="sure-password" placeholder="确认新交易密码" id="get-spass"></dd>
+                    <dd><button class="hc-buy" id="mod-getpay">设置交易密码</button></dd>
+                </dl>
+                <ul class="reminder">
+                    <li>温馨提示:</li>
+                    <li>•请您牢记找回后设置的交易密码，并切勿泄露和告诉他人。</li>
+                    <li>•在过程中遇到的任何问题，请致电花橙金融4000-267-555咨询。</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <!--用户中心eof-->
+    
+    <!--pop-->
+    <dl class="pop ">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>账户安全设置</dt>
+        <dd>
+             
+        </dd>
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+{{> userfooter}}

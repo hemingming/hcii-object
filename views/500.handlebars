@@ -1,0 +1,153 @@
+{{#section 'header'}}
+    {{> top}}
+    {{!--header--}}
+    <div id="header">
+        <a href="/" title="花橙金融" class="logo hcicon"></a>
+        <span style="width:120px;height:48px;background:url(./images/common/logo_g.png) no-repeat;float:left;margin:0 0 0 20px"></span>
+        <a href="/usercenter" class="wallet">我的钱包</a>
+
+        <div class="search">
+            <input type="text" name="search" placeholder="搜索您需要的理财产品" tip="搜索您需要的理财产品">
+            <a href="/products">银票</a>
+            <a href="/products">支票</a>
+            <a href="/products">商票</a>
+            <button class="button hcicon" onclick="window.location.href='/products'">搜索</button>
+        </div>
+    </div>
+    {{!--header eof--}}
+
+    {{!--nav--}}
+    <div id="nav">
+        <strong>理财投资分类</strong>
+        <ul class="menu">
+            <li><a href="/" class="on">首页</a></li>
+            <li>
+                <a href="/products?allproducts">我要投资</a>
+                {{!--
+                <ul>
+                    <li><a href="/products">花橙银票</a></li>
+                    <li><a href="/products">花橙商票</a></li>
+                    <li><a href="/products">保险理财</a></li>
+                    <li><a href="/products">保理投资</a></li>
+                    <li><a href="/products">花橙支票</a></li>
+                    <li><a href="/products">花橙车贷</a></li>
+                </ul>
+                --}}
+            </li>
+
+            <li><a href="/assignment">转让专区</a></li>
+            <li>
+                <a href="/help">新手帮助</a>
+                <ul>
+                    <li><a href="/profiting">如何购买</a></li>
+                    <li><a href="/help">新手指引</a></li>
+                    <li><a href="/help">常见问题</a></li>
+                </ul>
+            </li>
+            <li><a href="/service">客户服务</a></li>
+        </ul>
+    </div>
+    {{!--nav eof--}}
+{{/section}}
+
+{{!--banner--}}
+<div id="banner" class="clear">
+    <div class="sidebar">
+        <dl>
+            <dt>票据理财 <img src="{{static '/images/common/hot.gif'}}" alt="花橙金融票据理财"></dt>
+            <dd><a href="/products?yinpiao">花橙银票</a> <a href="/products?shangpiao">花橙商票</a></dd>
+        </dl>
+        <dl>
+            <dt>花橙支票宝</dt>
+            <dd><a href="/products">支票理财</a> <a href="/profiting?buy">如何购买</a></dd>
+        </dl>
+        <dl>
+            <dt>花橙金融</dt>
+            <dd><a href="/register">注册花橙</a> <a href="/login">登录花橙</a></dd>
+        </dl>
+        <dl>
+            <dt>金融新闻</dt>
+            <dd><a href="/news?home">花橙新闻</a> <a href="/reports?home">媒体报道</a></dd>
+        </dl>            
+    </div>
+    <div class="banner">
+    	<a href="/"><img src="{{static '/images/common/hc_500.jpg'}}" alt="花橙金融票据理财"></a>
+    </div>
+</div>
+{{!--banner--}}
+
+{{!--slogan--}}
+<div id="slogan">
+    <dl class="h1">
+        <dt><h2>安全无忧</h2></dt>
+        <dd>花橙金融资金银行托管</dd>
+        <dd>权威机构风控严格把控</dd>
+    </dl>
+    <dl class="h2">
+        <dt><h2>保障收益</h2></dt>
+        <dd>资产质押对应理财平台</dd>
+        <dd>更高更安全的收益保障</dd>
+    </dl>
+    <dl class="h3">
+        <dt><h2>灵活便捷</h2></dt>
+        <dd>债权转让 智能投资</dd>
+        <dd>充值投资 提现方便</dd>
+    </dl>
+
+</div>
+{{!--slogan eof--}}
+
+<!--footer-->
+<div id="footer">
+    <dl>
+        <dt>
+            <ul>
+                <li><strong><a href="/help">帮助中心</a></strong></li>
+                <li><a href="/profiting">如何购买</a></li>
+                <li><a href="/question">常见问题</a></li>
+                <li><a href="/help">新手指引</a></li>
+            </ul>
+            <ul>
+                <li><strong><a href="/safety">安全保障</a></strong></li>
+                <li><a href="/safety">资金安全</a></li>
+                <li><a href="/safety">风控保障</a></li>
+                <li><a href="/collection">托收公示</a></li>
+            </ul>
+            <ul>
+                <li><strong><a href="/products" title="花橙金融 理财产品">理财产品</a></strong></li>
+                <li><a href="/products" title="花橙金融 理财产品">票据产品</a></li>
+                <li><a href="/products" title="花橙金融 理财产品">支票产品</a></li>
+                <li><a href="/products" title="花橙金融 理财产品">保险产品</a></li>
+                <li><a href="/products&more" title="花橙金融 理财产品">更多</a></li>
+            </ul>
+            <ul>
+                <li><strong><a href="/news">新闻资讯</a></strong></li>
+                <li><a href="/news">花橙新闻</a></li>
+                <li><a href="/reports">媒体报道</a></li>
+                <li><a href="/partners">合作伙伴</a></li>
+            </ul>
+            <ul>
+                <li><strong><a href="/about">关于我们</a></strong></li>
+                <li><a href="/about">花橙金融</a></li>
+                <li><a href="/statement" target="_blank">法律声明</a></li>
+                <li><a href="/job">加入花橙</a></li>
+                <li><a href="/service">联系我们</a></li>
+            </ul>
+
+            <div class="service">
+                <span>客户服务</span>
+                <h5>4000-267-555</h5>
+
+                <em>工作时间：9:00 - 18:00</em>
+                <em>官方邮箱：<a href="mailto:service@hcii.cn">service@hcii.cn</a></em>
+            </div>
+        </dt>
+        <dd><strong><a href="http://www.hcii.cn/" title="花橙金融">花橙金融</a></strong> &copy; 2015 花橙互联网金融信息服务（上海）有限公司 All rights reserved <a href="http://www.miitbeian.gov.cn/" title="花橙金融备案号" target="_blank">沪ICP备15040224号-1</a> <span class="statis"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256242729'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1256242729%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span></dd>
+    </dl>
+    <p>
+        <a href="http://t.knet.cn/index_new.jsp" target="_blank" class="hcicon foot-kx">可信网站</a>
+        <a href="https://search.szfw.org/" target="_blank" class="hcicon foot-cx">诚信网站</a>
+        <a href="http://www.zx110.org/" target="_blank" class="hcicon foot-wl">网络诚信</a>
+    </p>
+</div>
+<!--footer eof-->

@@ -1,0 +1,36 @@
+{{!注册模板}}
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+    <!--login-->
+    <div class="userlogin">
+        <a href="/" title="花橙金融" class="hcicon logo"></a>
+        <h2>注册花橙金融</h2>
+
+        <div id="register">
+            <h3>拥有一个每天都赚钱的金融钱包</h3>
+            <form name="register" method="post" role="form" action="/register" onsubmit="return hcScript.uregister();">
+                <dl  class="clear">
+                    <dt class="error" id="error">{{error}}</dt>
+                    <dd><label class="hcuser account">帐号</label><input type="text" name="account" placeholder="手机号码" id="account"><i>输入手机号码</i></dd>
+                    <dd><label class="hcuser password">密码</label><input type="password" name="password"  placeholder="输入密码" id="password"><i>输入密码</i></dd>
+                    <dd><label class="hcuser password">确认密码</label><input type="password" name="password-again"  placeholder="确认密码" id="r-password"><i>确认密码</i></dd>
+                    <dd><label class="hcuser verify">验证码</label><input type="text" name="vercode"  placeholder="验证码" class="ver-code" id="vercode"><i>验证码</i><span><img src="/captcha" id="verpicture" /></span></dd>
+                    <dd><button class="submit" id="user-reg">马上注册</button></dd>
+                    <dd>阅读并同意<a href="/serviceagreement" target="_blank">《服务协议》</a>及<a href="/privacypolicy" target="_blank">《隐私政策》</a>条款</dd>
+                    <dd><a href="/login" class="register">已有帐号去登录？</a></dd>
+                </dl>
+            </form>
+        </div>
+
+        {{>bottom}}
+
+    </div>
+    <!--login eof-->
+
+<!--javascript-->
+<script src="{{static '/scripts/require.js'}}"  data-main="{{static '/scripts/main'}}"></script>
+<!--javascript eof-->
+<!--node:{{node}}-->

@@ -1,0 +1,43 @@
+{{!--新手指引--}}
+{{#section 'header'}}
+    {{> othertop}}
+    {{> head}}
+{{/section}}
+
+    <div id="container">
+        <div class="question clear">
+            <dl class="bar">
+                <dt class="clear">
+                <ul>
+                    <li><a href="/about">关于我们</a></li>
+                    <li><a href="/help">新手指引</a></li>
+                    <li><a href="/question">常见问题</a></li>
+                    <li><a href="/news">花橙新闻</a></li>
+                    <li><a href="/reports">媒体报道</a></li>
+                    <li><a href="/collection">托收公示</a></li>
+                    <li><a href="/job">加入花橙</a></li>
+                    <li><a href="/service">联系我们</a></li>
+                </ul>
+                </dt>
+                <dd>
+                    <strong class="qicon">花橙金融 理财平台</strong>
+                    <img src="images/banner/hc_banner_02.jpg" alt="花橙金融微信号">
+                </dd>
+            </dl>
+
+            <dl class="job news">
+                <dt>
+                    <h2 class="orange">花橙金融</h2>
+                </dt>
+                <dd>
+                    <h3>{{title}}</h3>
+                    <p class="date">发布平台：花橙金融  &nbsp;&nbsp;&nbsp;&nbsp;   发布时间：{{time}}  </p>
+                    
+                    <div class="con">{{{content}}}</div>
+                    <p style="text-align:right;">花橙金融 运营团队</p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    
+{{> footer}}

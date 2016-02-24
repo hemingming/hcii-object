@@ -1,0 +1,32 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+
+{{!--login--}}
+<div id="login" class="userlogin">
+    <a href="/" title="花橙金融" class="hcicon logo"></a>
+    <h2>一个帐号，玩转互联网金融！</h2>
+    <h3>花橙金融，全民理财投资新平台</h3>
+    <form name="login" method="post" role="form" action="/login" onsubmit="return hcScript.userlogin();">
+            
+        <dl class="clear">
+            <dt class="error" id="error">{{error}}</dt>
+            <dd id="uid"><label class="hcuser account">帐号</label><input type="text" name="account" placeholder="手机号码" id="account"><i>手机号码</i></dd>
+            <dd><label class="hcuser password">密码</label><input type="password" name="password"  placeholder="登录密码" id="password"><i>登录密码</i></dd>
+            <dd><button type="submit" class="submit" id="user-login">登 录</button></dd>
+            <dd><a href="/forgetpassword" class="forget">忘记密码？</a></dd>
+            <dd><a href="/register" class="register">注册花橙帐号</a></dd>
+        </dl>
+    </form>
+    
+    {{>bottom}}
+</div>
+{{!--login eof--}}
+
+
+<!--javascript-->
+<script src="{{static '/scripts/require.js'}}"  data-main="{{static '/scripts/main'}}"></script>
+<!--javascript eof-->
+<!--node:{{node}}-->

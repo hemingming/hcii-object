@@ -1,0 +1,143 @@
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            
+            <div class="total clear">
+                <a href="javascript:void(0);" class="hcuser hiding" id="hiding" title="隐藏金额">隐藏金额</a>
+                <dl class="r-line">
+                    <dt>当前资产：<span class="gry">(可用余额+在投金额+收益宝)</span></dt>
+                    <dd><strong id="user-assets">{{ucount}}</strong> <em>元</em></dd>
+                    <dd><em class="voucher">预期收益：<b class="orange">{{inte}}</b> 元</em> <i></i></dd>
+                </dl>
+                <dl>
+                    <dt>可用余额：</dt>
+                    <dd><strong id="user-balance">{{umoney}}</strong> <em>元</em></dd>
+                    <dd><a href="./user-recharge"><button>充 值</button></a> <a href="./user-withdraw"><button>提 现</button></a></dd>
+                </dl>
+            </div>
+
+            <div class="profit" id="mvault">
+                <dl>
+                    <dt>收益宝：<span>(年化收益率<b>3.6%</b>)</span></dt>
+                    <dd class="profit-menu">
+                        <strong><b>
+                            <script>
+                                var vault = {{uvault}};
+                                if(String(vault).indexOf('.') != -1){document.writeln(vault);}else{document.writeln(vault+'.00');};
+                            </script>
+                        </b><em>元</em></strong>
+                        <ul>
+                            <li> <strong class="blue">{{lvault}}<em>元</em> <span> (累计收益)</span></strong></li>
+                            <li> <strong class="blue"><script> var day = (Number({{nowday}})*0.036/360).toFixed(2); document.write(day);</script><em>元</em> <span> (今日收益)</span></strong></li>    
+                        </ul>
+
+                        <button id="turnout">转到余额</button>
+                        <button id="turnto">转入收益宝</button> 
+                    </dd>
+                    <dd>    
+                        <div class="user-profit hide">
+                            <div id="profit-table">
+                                <span>
+                                <i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i><i>7</i><i>8</i><i>9</i><i>10</i><i>11</i><i>12</i><i>13</i><i>14</i><i>15</i><i>16</i><i>17</i><i>18</i><i>19</i><i>19</i><i>20</i><i>22</i><i>23</i><i>24</i><i>25</i><i>26</i><i>27</i><i>28</i><i>29</i><i>30</i><i>31</i>
+                                </span>
+                                <span>
+                                <em>40</em><em>35</em><em>37</em><em>35</em><em>34</em><em>39</em><em>39</em><em>37</em><em>37</em><em>44</em><em>44</em><em>31</em><em>36</em><em>33</em><em>32</em><em>31</em><em>32</em><em>32</em><em>30</em><em>38</em><em>30</em><em>39</em><em>37</em><em>33</em><em>36</em><em>35</em><em>31</em><em>38</em><em>30</em><em>38</em><em>32</em>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="profit-rap"></div>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="total clear">
+                <dl class="r-line mine">
+                    <dt>投资项目：</dt>
+                    <div id="mineval">
+                        <!--
+                        <dd><span class="hcuser u-yp">银票理财：</span> <strong><b>2678.00</b><em>元</em></strong></dd>
+                        <dd><span class="hcuser u-sp">商票理财：</span> <strong><b>2010.00</b><em>元</em></strong></dd>
+                        <dd><span class="hcuser u-bx">保险理财：</span> <strong><b>5123.00</b><em>元</em></strong></dd>
+                        <dd><span class="hcuser u-bl">保理理财：</span> <strong><b>6234.00</b><em>元</em></strong></dd>
+                        <dd><span class="hcuser u-cd">车贷理财：</span> <strong><b>8213.00</b><em>元</em></strong></dd>
+                        <dd><span class="hcuser u-zp">支票理财：</span> <strong><b>8213.00</b><em>元</em></strong></dd>
+                        -->
+                    </div>
+                </dl>
+                <dl>
+                    <dt>投资占比：</dt>
+                    <dd>
+                        <div class="user-total hide">
+                            <div id="total-table">
+                                <script>
+                                    var pera = {{pera}};
+                                    var perb = {{perb}};
+                                    var perc = {{perc}};
+                                </script>
+                                <p>
+                                    <i scope="row">在投金额</i>
+                                    <em>{{pera}}%</em>
+                                </p>
+                                <p>
+                                    <i scope="row">预期利息</i>
+                                    <em>{{perb}}%</em>
+                                </p>
+                                <p>
+                                    <i scope="row">已赚利息</i>
+                                    <em>{{perc}}%</em>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div id="total-rap"></div>
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="recommend">
+                <p> <a href="/products&recommend">查看更多理财产品</a> </p>
+                {{!--
+                <a href="/products?user">
+                <p>推荐你喜欢的理财产品 <span>换一组</span></p>
+                <a href="/products?user">
+                    <dl>
+                        <dt>花橙商票HCSP2015003</dt>
+                        <dd><i>年化收益率</i><strong>9.98<em>%</em></strong></dd>
+                    </dl>
+                </a>
+                --}}
+            </div>
+
+
+
+        </div>
+    </div>
+    <!--用户中心eof-->
+
+    <!--pop-->
+    <dl class="pop pop-profit">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>我的收益宝</dt>
+        <dd>
+            <ul class="line">
+                <li><span>账户余额：</span><em><b class="amount f-t">{{umoney}} </b> 元</em> </li>
+                <li><span>收益宝余额：</span><em><b class="amount f-t"><script>var vault = {{uvault}};if(String(vault).indexOf('.') != -1){document.writeln(vault);}else{document.writeln(vault+'.00');};</script></b> 元</em></li>
+            </ul>
+        </dd>
+        <dd id="pop-contact">
+
+        </dd>
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+{{> userfooter}}

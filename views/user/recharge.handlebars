@@ -1,0 +1,132 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+        
+        <div class="user-main">
+            <h2><strong>我要充值</strong></h2> 
+            
+            <dl class="user-recharge clear" id="choicebanks">
+
+                
+                <dt><label>可用余额：</label><strong class="orange usermoney"> </strong>元</dt>
+
+                {{#if cards}}
+
+                    <form method="post" id="paymenturl" action="" target="_blank" onsubmit="return hcuserScript.recharge()">
+                    
+                        <form method="post" id="paymenturl" action="" target="_blank" onsubmit="return hcuserScript.useraddbank()">
+                            <dd>
+                                <label>充值金额：</label> <input name="amount" placeholder="输入充值金额" id="money-init"> 元 
+                            </dd>
+
+                            <dd>
+
+                                <p id="tbank"><a class="on tbank">快捷支付</a> <a class="tbank">网银充值</a></p>
+
+                                <div class="clear banks">
+                                    {{#cards}}
+                                    <span class="on"><em class="user-bank {{Char}}">{{cardName}}<i></i></em>
+                                    <input type="hidden" value="{{DelId}}"></span> <i>[ {{Number}} ]</i>
+                                    {{/cards}}
+                                </div>
+
+                                <div class="clear banks hide">
+                                    <!--<a href="javascript:;" class="more">更多银行</a>-->
+                                    <span><em class="user-bank bank-gs" id="ICBC">中国工商银行<i></i></em></span>
+                                    <span><em class="user-bank bank-zs" id="CMB">招商银行<i></i></em></span>
+                                    <span><em class="user-bank bank-zg" id="BOC">中国银行<i></i></em></span>
+                                    <span><em class="user-bank bank-zgjs" id="CCB">中国建设银行<i></i></em></span>
+                                        <span><em class="user-bank bank-zgny" id="ABC">中国农业银行<i></i></em></span>
+                                        <span><em class="user-bank bank-jt" id="BCOM">中国交通银行<i></i></em></span>
+                                        <span><em class="user-bank bank-ms" id="CMBC">中国民生银行<i></i></em></span>
+                                        <span><em class="user-bank bank-gd" id="CEB">光大银行<i></i></em></span>
+                                        <span><em class="user-bank bank-pf" id="SPDB">浦发银行<i></i></em></span>
+                                        <span><em class="user-bank bank-xy" id="CIB">兴业银行<i></i></em></span>
+                                        <span><em class="user-bank bank-zx" id="CITIC">中信银行<i></i></em></span>
+                                        <span><em class="user-bank bank-yz" id="PSBC">中国邮政储蓄银行<i></i></em></span>
+                                        <span><em class="user-bank bank-pa" id="PAB">平安银行<i></i></em></span>
+                                        <span><em class="user-bank bank-gf" id="GDB">广发银行<i></i></em></span>
+                                        <span><em class="user-bank bank-bj" id="BOB">北京银行<i></i></em></span>
+                                        <span><em class="user-bank bank-sh" id="SHB">上海银行<i></i></em></span>
+                                        <span><em class="user-bank bank-hx" id="HXB">华夏银行<i></i></em></span>
+                                        <span><em class="user-bank more">更多银行<i></i></em></span>
+                                        <!--
+                                        <span><em class="user-bank bank-shns" id="SRCB">上海农商银行<i></i></em></span>
+                                        <span><em class="user-bank bank-bjns" id="BJRCB">北京农商银行<i></i></em></span>
+                                        -->
+                                    <div class="hide morebank clear"></div>
+                                </div>
+                                <input type="hidden" name="cardid" id="bankcardid">
+                                <input type="hidden" name="code" id="bankcode">
+
+                            </dd>
+
+                            <dd>
+                                <div id="error"></div>
+                            </dd>
+                            <dd>
+                                <button class="hc-buy" id="user-recharge">充 值</button>
+                            </dd>
+                    
+                    </form>
+
+                {{else}}
+                    <form method="post" id="paymenturl" action="" target="_blank" onsubmit="return hcuserScript.useraddbank()">
+                        <dd>
+                            <label>充值金额：</label> <input name="amount" placeholder="输入充值金额" id="money-init"> 元 
+                        </dd>
+                        <dd>
+                            <label>银行卡号：</label><input type="text" name="number" placeholder="绑定唯一银行卡号" class="pay" id="banknumber">
+                        </dd>
+                        <dd>
+                            <div id="error"></div>
+                        </dd>
+                        <dd>
+                            <button type="submit" class="hc-buy" id="usertobank">充 值</button>
+                        </dd>
+                    </form>
+                {{/if}}
+
+            </dl>
+            
+            <ul class="reminder">
+                <li>充值规则：</li>
+                <li>• 首次充值需使用认证支付，绑定用户身份。认证支付成功后，方可使用网银充值。</li>
+                <li>• 所有充值资金将进入银行托管，充值金额不能低于100元。</li>
+                <li>• 为了您的账户安全，请在充值前进行身份认证、手机绑定。</li>
+                <li>• 您的账户资金将通过银行或第三方支付平台进行充值。连连支付将绑定您的银行卡，下次充值时将更便捷。</li>
+                <li>• 禁止洗钱、信用卡套现、虚假交易等行为，一经发现并确认，将冻结该账户。</li>
+                <li>• 充值不收取费用，充值最高限额以银行规定为准。</li>
+                <li>• 如果您充值遇到问题，请联系花橙客服：4000-267-555 </li>
+            </ul>
+
+        </div>
+    </div>
+    <!--用户中心eof-->
+
+    <!--pop-->
+    <dl class="pop pop-profit">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>正在充值...</dt>
+        <dd id="pop-contact">
+            <a href="/user-recharge?success" class="success payess"><i></i>充值成功，点击返回&gt;</a>
+            <a href="/user-recharge?success" class="error payror"><i></i>遇到问题？4000-267-555</a>
+        </dd>
+        <dd></dd>
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+
+{{> userfooter}}

@@ -1,0 +1,118 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-common.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> top}}
+    {{> head}}
+{{/section}}
+
+
+    <!--债权转让-->
+    <div id="tag">
+        <strong class="hcicon hc-trans">理财产品</strong>
+        <h2>转让专区</h2>
+        <p>方便小伙伴们投资灵活转让变现</p>
+    </div>
+    <!--债权转让eof-->
+
+    <ul id="sub-nav">
+        <li>转让收益</li>
+        <li><a href="javascript:void(0);" class="on">不限</a></li>
+        <li><a href="javascript:void(0);">9%以下</a></li>
+        <li><a href="javascript:void(0);">9-10%</a></li>
+        <li><a href="javascript:void(0);">10-11%</a></li>
+        <li><a href="javascript:void(0);">11-12%</a></li>
+        <li><a href="javascript:void(0);">12%以上</a></li>
+    </ul>
+
+    <div class="container clear">
+        <div class="assign"><!--t-l-->
+            <ul class="assign-user">
+                <li>投资者</li>
+                <li>投资项目</li>
+                <li>剩余天数</li>
+                <li>原始收益</li>
+                <li>转让收益</li>
+                <li class="handle">操作</li>
+            </ul>
+
+            <div class="tran-ticket">
+                <div id="tranbox"><img src="images/common/load.gif" id="pageload"></div>
+                <div id="pagination" class="pages"></div>
+                <input type="hidden" value="{{pagecount}}" id="pagecount">
+
+                {{!--
+                <dl> 
+                    <dt>
+                        <em class="hcuser head-t-1"></em>
+                        <p><b>138********</b><strong class="user-level">1</strong></p>
+                    </dt>
+                    <a href="javascript:void(0);" class="transfer-buy">
+                        <dd>
+                            <span class="tip">
+                                <strong>花橙银票理财</strong>
+                                <p>HCYP20150802115888</p>         
+                            </span>
+                            <span>
+                                <b>60</b>天
+                            </span>
+                            <span>
+                                <p><b class="blue">6.88</b>%</p>
+                                <p>3000.00元</p>
+                            </span>
+
+                            <span>
+                                <p><b class="orange">6.88</b>%</p>
+                                <p>3000.00元</p>
+                            </span>
+                            <button class="hc-buy">购买</button>
+                        </dd>
+                    </a>
+                </dl>
+                --}}
+
+            </div>
+        </div>
+
+        <div class="transfer"><!--t-r-->
+            <h3>接盘侠排行榜</h3>
+            <dl id="tranrank">
+                {{!--
+                <dt><em>排名</em><em>用户</em><em>成交金额</em></dt>
+                <dd><i class="hcuser rank-1"></i><b>1</b><span>136****886</span><span>68000.00</span></dd>
+                <dd><i class="hcuser rank-2"></i><b>2</b><span>186****669</span><span>58493.00</span></dd>
+                <dd><i class="hcuser rank-3"></i><b>3</b><span>135****658</span><span>12369.00</span></dd>
+                <dd><b>4</b><span>139****856</span><span>5600.00</span></dd>
+                <dd><b>5</b><span>135****545</span><span>4363.00</span></dd>
+                <dd><b>6</b><span>158****247</span><span>3000.00</span></dd>
+                <dd><b>7</b><span>136****787</span><span>2369.00</span></dd>
+                <dd><b>8</b><span>137****569</span><span>1000.00</span></dd>
+                <dd><b>9</b><span>150****658</span><span>1000.00</span></dd>
+                <dd><b>10</b><span>138****658</span><span>1000.00</span></dd>
+                --}}
+            </dl>
+
+            <h3>投资转让规则</h3>
+            <ul>
+                <li>1. 投资转让者设定补贴收益出让资产。资产购买者至该资产到期后享有约定的转让收益。</li>
+                <li>2. 投资转让双方成交即表示同意约定收益，超出产品利率部分由转让者原收益或本金中扣除，到期后支付给购买者。</li>
+                <li>3. 投资转让者享受资产转让成交当日之前收益（不含成交当日），资产购买者享受资产转让当日之后（含成交当日）收益。</li>
+                <li>花橙金融：4000-267-555</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--pop-->
+    <dl class="pop pop-trans">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>支付购买</dt>
+        <dd id="pop-trans"></dd>
+        <dd></dd>
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+{{> footer}}

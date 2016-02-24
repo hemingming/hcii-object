@@ -1,0 +1,44 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{!--top--}}
+<div id="top">
+    <div class="nav">
+        <ul>
+            <li>花橙金融</li>
+            <li>|</li>
+            <li>客服电话：4000-267-555 </li>
+            <li>关注我们：</li>
+            <li class="weixin hcicon">
+                <ul>
+                    <li><img src="images/common/hcweixin.png" alt="花橙金融微信订阅号"></li>
+                    <li>花橙金融订阅号</li>
+                </ul>
+            </li>
+            <li class="sina hcicon">
+                <ul>
+                    <li><img src="images/common/hcweibo.png" alt="花橙金融新浪微博"></li>
+                    <li>花橙金融微博</li>
+                </ul>
+            </li>
+        </ul>
+        {{#if username}}
+        <ul class="ur userinfo">
+            <li><a href="/out" title="退出登录">退出</a></li>
+            <li>|</li>
+            <li>您好，<b class="orange"><a href="/usercenter">{{username}}</a></b></li>
+        </ul>
+        {{else}}
+        <ul class="ur login">
+            <li><a href="/login" title="登录花橙金融">登录</a></li>
+            <li>|</li>
+            <li><a href="/register" title="注册花橙金融">注册</a></li>
+        </ul>
+        {{/if}}
+    </div>
+</div>
+<div style="position: relative;"><a href="#" target="_blank" style="background:url(../images/other/yuanxiao_bg.png) no-repeat center;width:100%;height:225px;position:absolute;z-index:-2;top:0px"></a></div>
+{{!-- <div id="laoren" style="width:300px;height:500px;background:url(https://www.hcii.cn/images/other/laoren.png) no-repeat center center; position:fixed;left:50%;margin-left:-900px;"></div> --}}
+{{!--top eof--}}

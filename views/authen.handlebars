@@ -1,0 +1,44 @@
+{{!认证模板}}
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+    <!--login-->
+    <div class="userlogin">
+        <a href="/" title="花橙金融" class="hcicon logo"></a>
+        <h2>花橙金融安全认证</h2>
+
+        <div id="authen">
+            <h3>实名认证保障资金安全</h3>
+            <form name="authen" method="post" role="form" action="/authen" onsubmit="return hcuserScript.authen();">
+                <dl>
+                    <dt class="error" id="error">{{error}}</dt>
+                    <dd>
+                        <input type="hidden" value="{{ userId }}" id="hidecode">
+                        <label class="hcuser verify">验证码</label><input type="text" name="smallcode" placeholder="输入手机验证码" class="ver-code" id="authcode">
+                        <i>输入手机验证码</i>
+                        <button class="number-code" id="send-code">59s</button></dd>
+
+                    <dd><input type="text" name="name" placeholder="输入真实姓名" value class="name" id="authname"><i>输入真实姓名</i></dd>
+                    <dd><input type="text" name="idcard" placeholder="输入身份证号" class="id-card" id="authid"><i>输入身份证号</i></dd>
+                    
+                    <dd class="top">交易密码用于支付购买，请牢记您的交易密码！</dd>
+                    <dd><input type="password" name="trad" placeholder="设置交易密码"  class="name" id="setpaypass"><i>设置交易密码</i></dd>
+                    <dd><input type="password" name="trad-again" placeholder="确认交易密码" class="name" id="surepaypass"><i>确认交易密码</i></dd>
+
+                    <dd class="top">朋友推荐你的号码，没有忽略不填写！</dd>
+                    <dd><input type="{{recode}}" name="recommend" placeholder="推荐号码" class="name" id="recommend" value="{{friend}}"><i>推荐号码</i></dd>
+                    <dd><button class="submit" id="user-auth">确认提交</button></dd>
+                </dl>
+            </form>
+        </div>
+
+        {{>bottom}}
+    </div>
+    <!--login eof-->
+
+<!--javascript-->
+<script src="{{static '/scripts/require.js'}}"  data-main="{{static '/scripts/wallet'}}"></script>
+<!--javascript eof-->
+<!--node:{{node}}-->

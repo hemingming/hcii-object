@@ -1,0 +1,170 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-common.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+	{{> top}}
+    {{> head}}
+{{/section}}
+
+<!--产品选择-->
+<div id="tag">
+    <strong class="hcicon hc-page">理财产品</strong>
+    <h2>理财选择</h2>
+    <p>花橙理财产品 方便您的选择</p>
+</div>
+<!--产品选择eof-->
+
+<!--产品-->
+<div class="container clear">
+    <dl class="choice">
+        <dt><p>产品类型</p><p>产品金额</p><p>投资周期</p><p>利率收益</p></dt>
+        <dd>
+            <a href="javascript:void(0);" class="on">不 限</a>
+            <a href="javascript:void(0);">银票理财</a>
+            <a href="javascript:void(0);">商票理财</a>
+            <a href="javascript:void(0);">花橙车贷宝</a>
+            <a href="javascript:void(0);">花橙支票宝</a>
+
+        </dd>
+        <dd>
+            <a href="javascript:void(0);" class="on">不 限</a>
+            <a href="javascript:void(0);">1000-1万</a>
+            <a href="javascript:void(0);">1万-5万</a>
+            <a href="javascript:void(0);">5万-10万</a>
+            <a href="javascript:void(0);">10万-50万</a>
+            <a href="javascript:void(0);">50万以上</a>
+        </dd>
+        <dd>
+            <a href="javascript:void(0);" class="on">不 限</a>
+            <a href="javascript:void(0);">1个月以内</a>
+            <a href="javascript:void(0);">1-3个月</a>
+            <a href="javascript:void(0);">3-6个月</a>
+            <a href="javascript:void(0);">6-12个月</a>
+            <a href="javascript:void(0);">12月以上</a>
+        </dd>
+        <dd>
+            <a href="javascript:void(0);" class="on">不 限</a>
+            <a href="javascript:void(0);">8%以下</a>
+            <a href="javascript:void(0);">8-9%</a>
+            <a href="javascript:void(0);">9-10%</a>
+            <a href="javascript:void(0);">10-11%</a>
+            <a href="javascript:void(0);">11-12%</a>
+            <a href="javascript:void(0);">12%以上</a>
+        </dd>
+    </dl>
+    <!--数据列表-->
+    <dl class="pro-list">
+        <dt>
+            <span>年化收益率</span>
+            <span>投资期限</span>
+            <span>产品类型</span>
+            <span>起购金额</span>
+            <span>剩余份数（人气）</span>
+        </dt>
+
+        <div id="products"><img src="https://www.hcii.cn/images/common/load.gif" id="pageload"></div>
+
+        <div id="pagination" class="pages"></div>
+        <input type="hidden" value="{{pagecount}}" id="pagecount">
+
+
+        {{!--#each prolist
+        <dd>
+            <a href="/detail">
+                <strong>{{Rates}}<i> %</i></strong>
+                <em><b>{{Cycle}}</b> 天</em>
+                <em>
+                    
+                    <script>
+                    var type = {{Type}};
+                    if(type == 1){
+                        document.write('花橙银票');
+                    }
+                    if(type == 2){
+                        document.write('花橙商票');
+                    }
+                    if(type == 3){
+                        document.write('花橙车贷');
+                    }
+                    if(type == 4){
+                        document.write('花橙支票');
+                    }
+                    </script>
+                </em>
+                <em>{{MinSingle}}元起</em>
+                <em>{{Surplus}}元</em>
+                <script>
+                var state = {{State}};
+                if(state == 1){
+                    document.write('<button class="hc-sale">即将开售</button>');
+                }
+                if(state == 2){
+                    document.write('<button class="hc-buy">立即加入</button>');
+                }
+                if(state == 3){
+                    document.write('<button class="hc-work">已起息</button>');
+                }
+                if(state == 4){
+                    document.write('<button class="hc-end">已还款</button>');
+                }
+                </script>
+            </a>
+        </dd>
+        /each--}}
+
+        
+
+        {{!--
+        <dd>
+            <a href="#">
+                <strong>8.12<i>%</i></strong>
+                <em><b>40</b> 天</em>
+                <em>花橙银票</em>
+                <em>1.00元起</em>
+                <em>26899.00元</em>
+                <button class="hc-sale">即将开售</button>
+            </a>
+        </dd>
+
+        <dd>
+            <a href="#">
+                <strong>8.12<i>%</i></strong>
+                <em><b>40</b> 天</em>
+                <em>花橙银票</em>
+                <em>1.00元起</em>
+                <em>26899.00元</em>
+                <button class="hc-buy">立即加入</button>
+            </a>
+        </dd>
+        <dd>
+            <a href="#">
+                <strong>8.12<i>%</i></strong>
+                <em><b>40</b> 天</em>
+                <em>花橙银票</em>
+                <em>1.00元起</em>
+                <em>26899.00元</em>
+                <button class="hc-work">已起息</button>
+            </a>
+        </dd>
+        <dd>
+            <a href="#">
+                <strong>8.12<i>%</i></strong>
+                <em><b>40</b> 天</em>
+                <em>花橙银票</em>
+                <em>1.00元起</em>
+                <em>26899.00元</em>
+                <button class="hc-end">已还款</button>
+            </a>
+        </dd>
+        --}}
+
+    </dl>
+    <!--数据列表 eof-->
+
+</div>
+<!--产品eof-->
+
+
+{{> footer}}

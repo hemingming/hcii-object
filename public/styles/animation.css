@@ -1,0 +1,195 @@
+
+
+/*
+ *  淡入
+ */
+@-webkit-keyframes fadeIn {
+  0% {
+  opacity: 0; /*初始状态 透明度为0*/
+  }
+  50% {
+  opacity: 0; /*中间状态 透明度为0*/
+  }
+  100% {
+  opacity: 1; /*结尾状态 透明度为1*/
+  }
+}
+#error p
+{-webkit-animation-name: fadeIn; /*动画名称*/
+-webkit-animation-duration: 0.5s; /*动画持续时间*/
+-webkit-animation-iteration-count: 1; /*动画次数*/
+-webkit-animation-delay: 0s; /*延迟时间*/}
+
+/*
+ * 旋转
+ */
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+/*
+ * jump
+ */
+@-webkit-keyframes jump {
+  0% {top: 360;
+    -webkit-animation-timing-function: ease-in;
+  }
+  40% {}
+  50% {top: 400px;
+    height: 100px;
+    -webkit-animation-timing-function: ease-out;
+  }
+  55% {top: 420px; height: 90px; 
+    -webkit-animation-timing-function: ease-in;}
+  65% {top: 380px; height: 100px; 
+    -webkit-animation-timing-function: ease-out;}
+  95% {
+    top: 360;   
+    -webkit-animation-timing-function: ease-in;
+  }
+  100% {top: 360;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+
+@-moz-keyframes jump {
+  0% {top: 360;
+    -moz-animation-timing-function: ease-in;
+  }
+  40% {}
+  50% {top: 380px;
+    height: 90px;
+    -moz-animation-timing-function: ease-out;
+  }
+  55% {top: 400px; height: 90px; border-radius: 70px / 60px;
+    -moz-animation-timing-function: ease-in;}
+  65% {top: 320px; height: 140px; border-radius: 70px;
+    -moz-animation-timing-function: ease-out;}
+  95% {
+    top: 360;   
+    -moz-animation-timing-function: ease-in;
+  }
+  100% {top: 360;
+    -moz-animation-timing-function: ease-in;
+  }
+}
+
+@-o-keyframes jump {
+  0% {top: 360;
+    -o-animation-timing-function: ease-in;
+  }
+  40% {}
+  50% {top: 380px;
+    height: 90px;
+    -o-animation-timing-function: ease-out;
+  }
+  55% {top: 400px; height: 90px; border-radius: 70px / 60px;
+    -o-animation-timing-function: ease-in;}
+  65% {top: 380px; height: 90px; border-radius: 70px;
+    -o-animation-timing-function: ease-out;}
+  95% {
+    top: 360;   
+    -o-animation-timing-function: ease-in;
+  }
+  100% {top: 360;
+    -o-animation-timing-function: ease-in;
+  }
+}
+
+@-ms-keyframes jump {
+  0% {top: 360;
+    -ms-animation-timing-function: ease-in;
+  }
+  40% {}
+  50% {top: 380px;
+    height: 90px;
+    -ms-animation-timing-function: ease-out;
+  }
+  55% {top: 400px; height: 90px; border-radius: 70px / 60px;
+    -ms-animation-timing-function: ease-in;}
+  65% {top: 380px; height: 90px; border-radius: 70px;
+    -ms-animation-timing-function: ease-out;}
+  95% {
+    top: 360;   
+    -ms-animation-timing-function: ease-in;
+  }
+  100% {top: 360;
+    -ms-animation-timing-function: ease-in;
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 360;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    top: 380px;
+    height: 90px;
+    animation-timing-function: ease-out;
+  }
+  55% {
+    top: 400px; 
+    height: 90px; 
+    border-radius: 70px / 60px;
+    animation-timing-function: ease-in;
+  }
+  65% {
+    top: 380px; 
+    height: 90px; 
+    border-radius: 70px;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    top: 360;   
+    animation-timing-function: ease-in;
+  }
+  100% {
+    top: 360;
+    animation-timing-function: ease-in;
+  }
+}
+
+/*pound*/
+@keyframes pound {
+    from { transform: none; }
+    50% { transform: scale(1.2); }
+    to { transform: none; }
+}

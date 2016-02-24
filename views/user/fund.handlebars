@@ -1,0 +1,154 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            <h2><strong>资金管理</strong></h2> 
+            <ul class="user-menu fund">
+                <li class="on">资金记录</li>
+                <li>认购记录</li>
+                <li>充值记录</li>
+                <li>提现记录</li>
+                <li>奖励记录</li>
+                <li>收益宝</li>
+            </ul>
+
+            <div class="user-found">
+                <div class="param">
+                    <table>
+                        <thead>
+                            <tr>
+                                
+                                <th>金额明细</th>
+                                <th>说明</th>
+                                <th>时间</th>
+                                <th>可用余额</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tfund">
+                            <img src="images/common/load.gif" id="pageload">
+                            {{!--
+                            <tr>
+                                <td>￥<font class="orange">2000.00</font></td>
+                                <td>￥<font class="blue">6000.00</font></td>
+                                <td>充值</td>
+                                <td>2015-09-22 12:30:28</td>
+                            </tr>
+                            --}}
+                        </tbody>    
+                    </table>
+                </div>
+
+                <div class="param hide">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>购买产品</th>   
+                                <th>份数</th>        
+                                <th>金额</th>        
+                                <th>利息</th>        
+                                <th>状态</th>        
+                                <th>方式</th>      
+                                <th>最迟还款日</th>  
+                            </tr>
+                        </thead>
+                        <tbody class="tfund">
+                            
+                        </tbody>    
+                    </table>
+                </div>
+                <div class="param hide">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>金额明细</th>
+                                <th>手续费</th>
+                                <th>状态</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tfund">
+                            
+                        </tbody>    
+                    </table>
+                </div>
+                <div class="param hide">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>银行卡</th>
+                                <th>金额/明细</th> 
+                                <th>手续费</th>
+                                <th>状态</th>
+                                <th>时间</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tfund">
+                            
+                        </tbody>    
+                    </table>
+                </div>
+                <div class="param hide">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>金额明细</th>
+                                <th>状态</th>
+                                <th>说明</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tfund">
+                            
+                        </tbody>    
+                    </table>
+                </div>
+                <div class="param hide">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>金额明细</th>
+                                <th>状态</th>
+                                <th>说明</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tfund">
+                            
+                        </tbody>    
+                    </table>
+                </div>
+
+            </div>
+            <div id="pagination" class="pages"></div>
+            <input type="hidden" value="{{pagecount}}" id="pagecount">
+        </div>
+    </div>
+    <!--用户中心eof-->
+
+    <!--pop-->
+    <dl class="pop pop-profit">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>我的收益宝</dt>
+        <dd id="pop-contact">
+        </dd>
+        <dd><button type="button" id="turnmoney" class="hc-buy">确 认</button></dd>
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+
+
+{{> userfooter}}

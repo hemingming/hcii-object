@@ -1,0 +1,56 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            <h2><strong>帐户设置</strong></h2> 
+
+            <div class="param user-infor">
+                <dl>
+                    <dt>设置你的帐户？</dt>
+                    <dd><label>绑定手机号码：</label> <strong>{{mobile}}</strong></dd>
+                    <dd class="clear">
+                        <label>修改头像：</label> <em class="userhead userpicture"></em>
+                        <ul class="user-head hide">
+                            <li class="hcuser head-1">head-1</li>
+                            <li class="hcuser head-2">head-2</li>
+                            <li class="hcuser head-3">head-3</li>
+                            <li class="hcuser head-4">head-4</li>
+                            <li class="hcuser head-5">head-5</li>
+                            <li class="hcuser head-6">head-6</li>
+                        </ul>
+                    </dd>
+                    {{#info}}
+                    <dd><label>昵称设置：</label> <input name="sure-password" placeholder="输入昵称" id="nick-name" value="{{Nick}}"></dd>
+                    <dd><label>绑定邮箱：</label> <input name="sure-password" placeholder="输入电子邮箱" id="e-mail" value="{{Email}}"></dd>
+                    <dd><button class="hc-buy" id="user-setup">保存设置</button></dd>
+                    {{/info}}
+                </dl>
+            </div>
+
+        </div>
+
+    </div>
+    <!--用户中心eof-->
+
+    <!--pop-->
+    <dl class="pop pop-user">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>帐户信息</dt>
+        <dd id="pop-contact"></dd>
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+{{> userfooter}}

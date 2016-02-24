@@ -1,0 +1,381 @@
+{{#section 'header'}}
+    {{> top}}
+    {{!--header--}}
+    <div id="header">
+        <a href="/" title="花橙金融" class="logo hcicon"></a>
+        <span style="width:120px;height:76px;background:url(./images/common/monkey.png) no-repeat;float:left;margin:-12px 0 0 9px"></span>
+        <a href="/usercenter" class="wallet">我的钱包</a>
+
+        <div class="search">
+            <input type="text" name="search" placeholder="搜索您需要的理财产品" tip="搜索您需要的理财产品">
+            <a href="/products/">银票</a>
+            <a href="/products/">支票</a>
+            <a href="/products/">商票</a>
+            <button class="button hcicon" onclick="window.location.href='/products/'">搜索</button>
+        </div>
+    </div>
+    {{!--header eof--}}
+
+    {{!--nav--}}
+    <div id="nav">
+        <strong>理财投资分类</strong>
+        <ul class="menu">
+            <li><a href="/" class="on">首页</a></li>
+            <li>
+                <a href="/products/">我要投资</a>
+                {{!--
+                <ul>
+                    <li><a href="/products/">花橙银票</a></li>
+                    <li><a href="/products/">花橙商票</a></li>
+                    <li><a href="/products/">保险理财</a></li>
+                    <li><a href="/products/">保理投资</a></li>
+                    <li><a href="/products/">花橙支票</a></li>
+                    <li><a href="/products/">花橙车贷</a></li>
+                </ul>
+                --}}
+            </li>
+
+            <li><a href="/assignment">转让专区</a></li>
+            <li>
+                <a href="/help">新手帮助</a>
+                <ul>
+                    <li><a href="/profiting">如何购买</a></li>
+                    <li><a href="/help">新手指引</a></li>
+                    <li><a href="/question">常见问题</a></li>
+                </ul>
+            </li>
+            <li><a href="/news/">花橙新闻</a></li>
+            <li><a href="/service">客户服务</a>
+                <ul>
+                    <li><a href="/collection/" title="票据托收">托收公示</a></li>
+                    <li><a href="/repayment/" title="回款公示">回款凭证</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    {{!--nav eof--}}
+{{/section}}
+
+{{!--banner--}}
+<div id="banner" class="clear">
+    <div class="sidebar">
+        <dl>
+            <dt>票据理财 <img src="{{static '/images/common/hot.gif'}}" alt="花橙金融票据理财"></dt>
+            <dd><a href="/products/">花橙银票</a> <a href="/products?shangpiao">花橙商票</a></dd>
+        </dl>
+        <dl>
+            <dt>花橙支票宝</dt>
+            <dd><a href="/products/">支票理财</a> <a href="/profiting?buy">如何购买</a></dd>
+        </dl>
+        <dl>
+            <dt>花橙金融</dt>
+            <dd><a href="/register">注册花橙</a> <a href="/login">登录花橙</a></dd>
+        </dl>
+        <dl>
+            <dt>金融新闻</dt>
+            <dd><a href="/news/">花橙新闻</a> <a href="/reports/">媒体报道</a></dd>
+        </dl>            
+    </div>
+    <div class="banner">
+        <!-- slide -->
+        <div id="swiper" class="swiper">
+            <div class="picure">
+                <ul>
+	 <!--			   <li><a href="/act/newspring" title="花橙金融"  target="_bank"><img src="{{static '/images/banner/20160128.png'}}" alt="花橙金融"></a></li>      
+           		   <li><a href="/act/5000" title="花橙金融"  target="_bank"><img src="{{static '/images/banner/5000.png'}}" alt="花橙金融"></a></li>             
+    	-->        <li><a href="/act/yuanxiao" title="花橙金融"  target="_black"><img src="{{static '/images/banner/lantern.jpg'}}" alt="花橙金融"></a></li>                
+                    <li><a href="/" title="花橙金融"  target="_self"><img src="{{static '/images/banner/banner2.png'}}" alt="花橙金融"></a></li>             
+                    <li><a href="#" title="花橙金融" target="_blank"><img src="{{static '/images/banner/banner1-4.jpg'}}" alt="花橙金融"></a></li>
+                    <li><a href="/act/shouyibao/" title="花橙收益宝" target="_blank"><img src="{{static '/images/banner/hcbanner_3.jpg'}}" alt="花橙金融收益宝"></a></li>
+                </ul>
+            </div>
+            <div class="cursor">
+                <ul><li></li><li></li><li></li><li></li></ul>
+            </div>
+            <a class="prev" href="javascript:void(0)"></a>
+            <a class="next" href="javascript:void(0)"></a>
+        </div>
+    </div>
+</div>
+{{!--banner--}}
+
+{{!--slogan--}}
+<div id="slogan">
+    <dl class="h1">
+        <dt><h2>安全无忧</h2></dt>
+        <dd>花橙金融资金银行托管</dd>
+        <dd>质押银行托收一一对应</dd>
+    </dl>
+    <dl class="h2">
+        <dt><h2>保障收益</h2></dt>
+        <dd>资产质押对应理财平台</dd>
+        <dd>更高更安全的收益保障</dd>
+    </dl>
+    <dl class="h3">
+        <dt><h2>灵活便捷</h2></dt>
+        <dd>债权转让 智能投资</dd>
+        <dd>充值投资 提现方便</dd>
+    </dl>
+
+</div>
+{{!--slogan eof--}}
+
+{{!--notice--}}
+<div id="notice">
+        <span>最新公告：</span>
+        <ul>
+            {{#notice}}
+            <li><a href="/hcdetails&{{DelId}}">{{Name}} </a></li>
+            {{/notice}}
+            {{!--
+            <li><a href="#" title="花橙金融">花橙金融新手标火爆开启，更多理财产品收益多多，敬请关注花橙金融最新产品，抢起来。</a></li>
+            <li><a href="#" title="花橙金融">花橙金融新手标火爆开启，更多理财产品收益多多，敬请关注花橙金融最新产品，抢起来。</a></li>
+            <li><a href="#" title="花橙金融">花橙金融新手标火爆开启，更多理财产品收益多多，敬请关注花橙金融最新产品，抢起来。</a></li>
+            <li><a href="#" title="花橙金融">花橙金融新手标火爆开启，更多理财产品收益多多，敬请关注花橙金融最新产品，抢起来。</a></li>
+            --}}
+        </ul>
+        <a href="/notice&hcii.cn">&gt;&gt;查看更多公告</a>
+</div>
+{{!--notice eof--}}
+
+{{!--新手专享--}}
+    {{#novice}}
+    <h3>新手专享 <strong>花橙金融新手专享 收益多多</strong></h3>
+    <div class="novice">
+        <em class="hcicon"></em>
+        <a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html">
+            <strong>{{Name}}</strong>
+            <span class="icon01 hcicon user-tip"><em id="user-tip"><i></i>100%保本保息</em></span>
+            <span class="icon02 hcicon user-tip"><em id="user-tip"><i></i>优质资产保障</em></span>
+            <ul>
+                <li>年化收益率</li>
+                <li class="f-top"><b class="orange f-t">{{Rates}}</b></li>
+                <li>%</li>
+            </ul>
+            <ul>
+                <li>投资周期</li>
+                <li class="f-top f-t"><b>{{Cycle}}</b></li> 
+                <li>天</li>
+            </ul>
+            <ul>
+                <li>剩余份数</li>
+                <li class="f-top f-t"><b>{{Surplus}}</b></li> 
+                <li>份</li>
+            </ul>
+            <div class="svg progress" id="progress"><i>{{Percent}}</i>%</div>
+            <script>
+            var state = {{State}};
+            if(state == 1){
+                document.write('<span class="n-buy hc-sale">即将开售</span>');
+            }
+            if(state == 2){
+                document.write('<span class="n-buy hc-buy">立即加入</span>');
+            }
+            if(state == 3){
+                document.write('<span class="n-buy hc-work">已起息</span>');
+            }
+            if(state == 4){
+                document.write('<span class="n-buy hc-end">已还款</span>');
+            }
+            </script>
+        </a>
+    </div>
+{{/novice}}
+{{!--新手专享 eof--}}
+
+{{!--明星产品--}}
+<h3>明星产品 <strong>花橙金融明星优选票据产品</strong></h3>
+<div id="star-pro">
+    <div class="star">
+            {{#each star}}
+                <script>
+                var type = {{Type}};
+                var state = {{State}};
+                var dmoney = String('{{OnCard_a}}');if(dmoney!=''){dmoney = dmoney;}
+                if(state == 1){
+                    document.write('<dl><a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html"><dt>{{Name}} '+dmoney+'</dt><dd class="f-h"><b>年化收益率</b> <strong class="f-t hc-fs"> {{Rates}} </strong> <em>%</em></dd><dd>投资周期：{{Cycle}} 天</dd><dd>总额：{{Amount}}  元<i></i></dd><dd><span class="hc-sale">即将开售</span></dd></a></dl>');
+                }
+                if(state == 2){
+                    document.write('<dl><a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html"><dt>{{Name}} <font class="orange">{{OnCard_a}}</font></dt><dd class="f-h"><b>年化收益率</b> <strong class="f-t hc-fs"> {{Rates}} </strong> <em>%</em></dd><dd>投资周期：{{Cycle}} 天</dd><dd>总额：{{Amount}}  元<i></i></dd><dd><span class="hc-buy">立即加入</span></dd></a></dl>');
+                }
+                if(state == 3){
+                    document.write('<dl><a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html"><dt>{{Name}}</dt><dd class="f-h"><b>年化收益率</b> <strong class="f-t hc-fw"> {{Rates}} </strong> <em>%</em></dd><dd>投资周期：{{Cycle}} 天</dd><dd>总额：{{Amount}}  元<i></i></dd><dd><span class="hc-work">已起息</span></dd></a></dl>');
+                }
+                if(state == 4){
+                    document.write('<dl><a href="/products/"><dt>{{Name}}</dt><dd class="f-h"><b>年化收益率</b> <strong class="f-t hc-fe"> {{Rates}} </strong> <em>%</em></dd><dd>投资周期：{{Cycle}} 天</dd><dd>总额：{{Amount}}  元<i></i></dd><dd><span class="hc-end">已还款</span></dd></a></dl>');
+                }
+                </script>
+            {{/each}}   
+    </div>
+</div>
+{{!--明星产品 eof--}}
+
+{{!--票据产品--}}
+<div class="container clear">
+    <div class="ticket">
+        <h3>票据理财 <strong>花橙金融优选银行承兑汇票</strong></h3>
+
+            {{#each bill}}
+                <script>
+                var state = {{State}};
+                if(state == 1){
+                    document.write('<a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html"><ul><li><strong> {{Name}} </strong></li><li style="width:150px;"><em>总额</em><em class="blue">{{Amount}}</em>元</li><li style="width:200px;"><em>年化收益率</em><b class="f-yp"> {{Rates}} </b><em>%</em></li><li><em>投资周期</em><b> {{Cycle}} </b><em>天</em></li><span class="t-buy hc-sale">即将开售</span></ul></a>');
+                }
+                if(state == 2){
+                    document.write('<a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html"><ul><li><strong> {{Name}} </strong></li><li style="width:150px;"><em>总额</em><em class="blue">{{Amount}}</em>元</li><li style="width:200px;"><em>年化收益率</em><b class="f-yp"> {{Rates}} </b><em>%</em></li><li><em>投资周期</em><b> {{Cycle}} </b><em>天</em></li><span class="t-buy hc-buy">立即加入</span></ul></a>');
+                }
+                if(state == 3){
+                    document.write('<a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html"><ul><li><strong> {{Name}} </strong></li><li style="width:150px;"><em>总额</em><em class="blue">{{Amount}}</em>元</li><li style="width:200px;"><em>年化收益率</em><b class="f-yp"> {{Rates}} </b><em>%</em></li><li><em>投资周期</em><b> {{Cycle}} </b><em>天</em></li><span class="t-buy hc-work">已起息</span></ul></a>');
+                }
+                if(state == 4){
+                    document.write('<a href="/products/"><ul><li><strong> {{Name}} </strong></li><li style="width:150px;"><em>总额</em><em class="blue">{{Amount}}</em>元</li><li style="width:200px;"><em>年化收益率</em><b class="f-yp"> {{Rates}} </b><em>%</em></li><li><em>投资周期</em><b> {{Cycle}} </b><em>天</em></li><span class="t-buy hc-end">已还款</span></ul></a>');
+                }
+                </script>
+            {{/each}}
+    </div>
+
+    <div class="s-banner">
+        <h3>活动 / 指南 <strong>理财 Party on!</strong></h3>
+        <ul>
+            <li><a href="/profiting?help" title="理财帮助"><img src="images/banner/hc_banner_01.jpg" alt="理财新手帮助"></a></li>
+            <li><a href="/service?qrcode" title="花橙金融"><img src="images/banner/hc_banner_02.jpg" alt="花橙金融二维码"></a></li>
+        </ul>
+    </div>
+</div>
+{{!--票据产品 eof--}}
+
+{{!--保险保理--}}
+<div class="container clear">
+    <div class="fact">
+        {{!--支票-->
+        <h3>花橙支票宝 <strong>花橙金融支票宝理财产品 100%保本保息</strong></h3>
+        <div class="fact-box clear bx-border">
+            {{#each check}}
+            <script>
+                var check = {{State}};
+                if(check == 4){
+                    document.writeln('<a href="/products/"><dl><dt> {{Name}} </dt><dd><span>年化收益率</span><b class="f-bx f-t"> {{Rates}} </b><em>%</em></dd><dd class="bx"><p>期限 {{Cycle}} 天</p><p>总额 {{Amount}} 元</p><p>起售时间 {{StartTime}} </p></dd></dl></a>');
+                }else{
+                    document.writeln('<a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html"><dl><dt> {{Name}} </dt><dd><span>年化收益率</span><b class="f-bx f-t"> {{Rates}} </b><em>%</em></dd><dd class="bx"><p>期限 {{Cycle}} 天</p><p>总额 {{Amount}} 元</p><p>起售时间 {{StartTime}} </p></dd></dl></a>');
+                }
+            </script>
+            
+            {{/each}}
+        </div>
+        --}}
+
+        <!--新闻-->
+        <h3>新闻报道<strong>花橙最新新闻资讯报道</strong></h3>
+        <div class="fact-box clear bl-border">
+            <ul class="news clear">
+                {{#news}}
+                <li><a href="/hcdetails&{{DelId}}">{{Name}} <span>{{UpTime}}</span></a></li>
+                {{/news}}
+
+            </ul>
+        {{!--
+            <a href="/detail">
+                <dl>
+                    <dd class="tip">保利担保  |  按月付息</dd>
+                    <dt> {{Name}} </dt>
+                    <dd><span>年化收益率</span><b class="f-bl f-t"> {{Rates}} </b><em class="per">%</em></dd>
+                    <dd class="bl">
+                        <p>期限 {{Cycle}} 天</p>
+                        <p>总额 {{Amount}} 元</p>
+                        <p>起售时间 {{StartTime}} </p>
+                    </dd>
+                    
+                </dl>
+            </a>
+        --}}
+
+        </div>
+    </div>
+
+    <div class="record">
+        <h3>推荐产品 / 浏览记录 <strong></strong></h3>
+        <ul>
+            {{#each star}}
+                <li>
+                    <a href="/detail?product&{{DelId}}&HCIICN&Id={{Number}}&Surplus={{Surplus}}&Type={{Type}}&web=HCIICN.html">
+                       <span class="f-t">{{Number}}</span>
+                       <div><p><i style="float:left;">{{Name}}</i><i style="float:right;"><b>{{Rates}}</b><em>%</em></i></p></div> 
+                    </a>
+                </li> 
+            {{/each}}
+
+            <p class="more"><a href="/products?allproducts/">&gt;&gt;更多理财收益</a></p>
+        </ul>
+    </div>
+</div>
+{{!--保险保理 eof--}}
+
+
+<h3>大家都在买 <strong></strong></h3>
+<div id="hot">
+    <ul>
+        <li><span>152******** 购买了花橙银票</span><span>170******** 购买了花橙支票</span><span>139******** 购买了花橙银票</span><span>150******** 购买了花橙银票</span><span>138******** 购买了花橙银票</span><span>136******** 购买了花橙银票</span><span>138******** 购买了花橙银票</span></li>
+        <li><span>158******** 购买了花橙支票</span><span>136******** 购买了花橙银票</span><span>158******** 购买了花橙银票</span><span>137******** 购买了花橙银票</span><span>138******** 购买了花橙银票</span><span>138******** 购买了花橙银票</span><span>158******** 购买了花橙支票</span></li>
+    </ul>
+</div>
+
+<h3>合作机构 <strong></strong></h3>
+<div id="partner">
+    <ul>
+        <li>
+            <a href="http://www.cmbc.com.cn/" target="_blank" rel="nofollow" title="民生银行" class="hcicon line-ms"></a> <a href="http://www.cmbchina.com/" target="_blank" rel="nofollow" title="招商银行" class="hcicon line-zs"></a> <a href="http://cn.unionpay.com/" target="_blank" rel="nofollow" title="中国银联" class="hcicon line-yl"></a> <a href="http://www.sina.com.cn/" target="_blank" rel="nofollow" title="新浪" class="hcicon line-sina"></a>  <a href="http://www.yicai.com/" target="_blank" rel="nofollow" title="第一财经" class="hcicon line-one"></a> <a href="http://www.hexun.com/" target="_blank" rel="nofollow" title="和讯网" class="hcicon line-hx"></a> <a href="http://www.dragontv.cn/" target="_blank" rel="nofollow" title="东方卫视" class="hcicon line-df"></a>
+        </li>
+        <li>
+            <a href="http://www.sinosig.com/" target="_blank" rel="nofollow" title="阳光保险" class="hcicon line-dd"></a> <a href="http://www.lianlianpay.com/" target="_blank" rel="nofollow" title="支付" class="hcicon line-ll"></a> <a href="https://www.baidu.com/" target="_blank" rel="nofollow" title="百度" class="hcicon line-bd"></a> <a href="http://caifu.baidu.com/?from=jinrong" target="_blank" title="百度财富" class="hcicon line-bcf"></a> <a href="http://www.rong360.com/" target="_blank" rel="nofollow" title="融360" class="hcicon line-360"></a> <a href="http://www.wangdaizhijia.com/" target="_blank" title="网贷之家" class="hcicon line-wdzj"></a><a class="line-tou163" href="http://www.tou163.com" title="投163-P2P网贷导航第一站" target="_blank" ><img src="/images/common/logo_link.png" height="42px" /></a> 
+        </li>
+    </ul>
+</div>
+
+<div id="hcii" class="hide"><a href="/usercenter" title="花橙理财"><img src="{{static '/images/common/hc_hcii.png'}}" alt="花橙金融理财平台"></a><i class="hcicon"></i></div>
+<p class="hcii hide"></p>
+
+{{> footer}}
+
+
+{{!-- 弹窗--}}
+{{!--
+<div id="yindaotopdiv"  class="index_CPM" style="width:100%;height:100%;position:fixed;top:0;left:0;z-index:1000;display:none;">
+    <div class="bg black"></div>
+    <div style="width:1099px;height:690px;position:absolute;top:50%;left:49%;margin:-390px 0 0 -547px;background:url(/images/other/tanchuang_20160128.png) no-repeat;z-index:99;"  class="close">
+        <div class="close" style="width:45px;height:51px;background:url(/images/common/close.png) no-repeat;position:absolute;top:64px;right:72px;cursor:pointer;"></div>
+     <!--   <a href="/register" style="position:absolute;width:163px;height:50px;background:url(/images/common/index_CPM_btn.png) no-repeat;left:50%;margin-left:-81px;bottom:-30px;"></a> -->   
+	</div>
+</div>
+--}}
+
+{{!-- 跳转移动端代码
+<script type="text/javascript">(function(){
+    var res = GetRequest();
+    var par = res['index'];
+    if(par!='gfan'){
+        var ua=navigator.userAgent.toLowerCase();
+        var contains=function (a, b){
+            if(a.indexOf(b)!=-1){return true;}
+        };
+        var toMobileVertion = function(){
+            window.location.href = 'http://m.hcii.cn'
+        }
+  
+        if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+        if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+    ||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+    }
+})();
+function GetRequest() {
+   var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+      }
+   }
+   return theRequest;
+}</script>
+--}}

@@ -1,0 +1,79 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            <h2><strong>智能投资</strong></h2> 
+            <ul class="user-menu user-intell">
+                <li class="on">智能投资设置</li>
+                <li>智能投资说明</li>
+            </ul>
+
+            <div class="param user-intell">
+                <dl>
+                    <dt><label>可用余额：</label><strong class="orange f-t usermoney" id="intelval"> </strong> 元</dt>
+                    <dd><label>投资范围：</label> <input name="range" id="amounta"> - <input name="range" id="amountb"> <i>元</i></dd>
+                    <dd><em><div id="slider-rangea"></div></em></dd>
+                    <dd><label>投资期限：</label> <input name="limit" id="amountc"> - <input name="limit" id="amountd"> <i>天</i></dd>
+                    <dd><em><div id="slider-rangeb"></div></em></dd>
+                    <dd><label>投资利率：</label> <input name="rate" id="amounte">  - <input name="rate" id="amountf"> <i>%</i></dd>
+                    <dd><em><div id="slider-rangec"></div></em></dd>
+                    <dd><label>交易密码：</label> <input type="password" name="pay-password" placeholder="输入交易密码" class="intell-init" maxlength="6"> <a href="/user-safety?intell">忘记交易密码？</a></dd>
+                    <dd><button class="hc-buy" id="setintell">确认设置</button></dd>
+                    <dd><div class="error" id="error"></div></dd>
+                </dl>
+                <dl class="intells clear">
+                    
+                    <dt><i>单笔金额范围</i><i>借款期限范围</i><i>借款利率范围</i><i>已投金额</i><i class="i-l">操作</i></dt>
+                    {{#lists}}
+                        <dd><span>{{MinMoney}}-{{MaxMoney}}元</span><span>{{MinCycle}}-{{MaxCycle}}天</span><span>{{MinRates}}%-{{MaxRates}}% </span><span>0.00</span><span class="i-l"> 
+                        <script>
+                            var type = {{Enabled}};
+                            if(type == 0){document.writeln('<input type="checkbox" name="check" value="" class="lcs_check" autocomplete="off" data="{{DelId}}">')}else{
+                                document.writeln('<input data="{{DelId}}" type="checkbox" name="check" value="" class="lcs_check lcs_tt1 hide" checked="checked" autocomplete="on" /> ');
+                            }
+                        </script>
+
+                        
+                        <button class="hc-end del-intell" data="{{DelId}}">删除</button></span></dd>
+                    
+                    {{/lists}}
+                </dl>
+            </div>
+            <div class="param user-intell hide">
+                <ul>
+                    <li>智能投资说明:</li>
+                    <li><p>1、智能投资程序将在产品开售前15分钟启动并完成自动投资，您需在产品开售前15分钟进行充值和设置。</p></li>
+                    <li><p>2、智能投资设置的最大授权金额为：产品开售15分钟之前的帐户可用余额； 最小金额：必须大于或等于100元。</p></li>
+                    <li><p>3、智能投资设置，您需要先设定授权金额、期限、利率等要素后，输入交易密码完成授权，智能投资会自动生成状态栏，您可以设定状态栏的开关：开启或关闭对应的智能投资。</p></li>
+                    <li><p>4、授权智能投资时需要输入您的交易密码进行授权操作，以保证您的资金安全。</p></li>
+                    <li><p class="t-r">花橙金融：4000-267-555</p></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <!--用户中心eof-->
+
+    <!--pop-->
+    <dl class="pop">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>智能投资</dt>
+        <dd></dd>
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+{{> userfooter}}

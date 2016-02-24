@@ -1,0 +1,147 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-common.css?20151230'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> top}}
+    {{> head}}
+{{/section}}
+
+    <!--产品详细-->
+    <div id="tag">
+        <strong class="hcicon hc-pro">理财产品</strong>
+        <h2>购买产品</h2>
+        <p>花橙金融理财产品 购买多多收益多多</p>
+
+    </div>
+    <!--产品详细eof-->
+
+    <!--购买-->
+    <div class="container clear">
+        {{#billinfo}}
+        <dl class="param">
+            <script>var type = {{Type}};if(type == 0){document.write('<i class="hcicon hc-cd">保障认证</i>');}if(type == 1){document.write('<i class="hcicon hc-yp">保障认证</i>');}if(type == 2){document.write('<i class="hcicon hc-cd">保障认证</i>');}if(type == 3){document.write('<i class="hcicon hc-cd">保障认证</i>');}if(type == 4){document.write('<i class="hcicon hc-zp">保障认证</i>');}</script>
+            
+            <dt>{{Name}} <script>var dmoney = String('{{OnCard_a}}');if(dmoney!=''){document.writeln('('+dmoney+')');}</script> <span class="orange">{{Label_a}}</span></dt>
+            <dd>
+                <em style="width:260px;"><p>年化收益</p> <script>var rate = {{Rates}};if(rate>15){var rate = rate/2+'+'+rate/2;}document.writeln('<strong class="rate">'+rate+'</strong>');</script><strong class="rate" id="in-rate" style="display:none;"> {{Rates}} </strong> <b>%</b></em>
+                <em style="width:180px;"><p>投资周期</p> <strong> {{Cycle}} </strong> <b>天</b></em>
+                <em><p>产品类型</p> <strong class="type">
+                    <script>var label = {{Label}}; var type = {{Type}};if(type == 0){document.write('活动');}if(type == 1){document.write('花橙银票');}if(type == 2){document.write('花橙商票');}if(type == 3){document.write('花橙车贷');}if(type == 4){document.write('花橙支票');}</script>
+                </strong> <b class="hcicon icon01 user-tip"><em id="user-tip"><i></i>100%保本保息</em></b><b class="hcicon icon02 user-tip"><em id="user-tip"><i></i>优质资产保障</em></b></em>
+
+                <div class="progress-bar">
+                    <span><div class="gress" style="width:0%"></div></span><i id="percent">{{Percent}}%</i>
+                </div>
+                <p><span class="bank">投资周期<b id="in-days">{{Cycle}}</b>天</span> <span>融资金额<b><script>document.write({{Amount}}/10000);</script></b>万</span> <span class="max">剩余份额<b id="in-sur"> {{Surplus}} </b>份</span></p>
+            </dd>
+            <dd>
+                <script>
+                var act = type;
+                if(act == 0){document.writeln('<p><span class="bank">投资单位：<b id="in-unit">{{MinSingle}}</b>元/份</span> <span>&nbsp;</span> <span class="max">最大投资份数：<b id="in-max">{{MaxSingle}}</b>份</span></p>');}else{document.writeln('<p><span class="bank">到期兑付：{{Organ}}</span> <span>投资单位：<b id="in-unit">{{MinSingle}}</b>元/份</span> <span class="max">最大投资份数：<b id="in-max">{{MaxSingle}}</b>份</span></p>');}       
+                </script>
+                
+            </dd>
+            <dd>
+                <p><span>发售日期：{{StartTime}}<i class="tip-qa user-tip">?<em id="user-tip"><i></i>购买成功当日起息</em></i></span> <span>结息日期：{{EndDate}}</span> <span class="max">最迟还款日 ：{{LastDate}}<i class="tip-qa user-tip">?<em id="user-tip"><i></i>节假日顺延</em></i></span></p>
+            </dd>
+            
+        </dl>
+        <script>var start = '{{StartTime}}';</script>
+        {{/billinfo}}
+        <ul class="purch">
+            <script>
+                var canbuy = {{Buy}};
+                var state = {{State}};
+                //var start = {{StartTime}};
+                if(state == 0){
+                    document.write('<strong>待审核</strong>');
+                }
+                if(state == 1){
+                    document.write('<strong>即将开售<i style="width:200px;font-size:16px;position:absolute;left:0px;top:130px;height:50px;line-height:20px;">'+start+'<br/>火爆开启</i></strong>');
+                }
+                if(state == 3){
+                    document.write('<strong>已售罄</strong>');
+                }
+                if(state == 4){
+                    document.write('<strong>已还款</strong>');
+                }
+                if(state == 2){
+                    if(canbuy == 0){
+                        if(label == 2){
+                            document.write('<li><em>购买份数：</em> <a href="javascript:void(0);" id="in-checkall"><i class="all"></i>全选</a></li><li><input type="text" name="amount" tip="输入购买份数" placeholder="输入购买份数" id="in-init"> <span class="unit">份</span></li><li><p><em>投资金额：</em>  <span><i id="in-sum">0.00</i>元</span></p><p><em>预算收益：</em>  <span><i id="in-exp">0.00</i>元</span></p><p><em>总计收益：</em>  <span><i id="in-all">0.00</i>元</span></p> {{#if card}}<p><em>我的卡券：</em> <a href="javascript:void(0);" class="mcard">卡券</a></p><ul class="hide" id="cardlist">{{#each card}}<li><i class="all" data="{{DelId}}"></i> <span><em class="blue">{{Factor}} </em><em class="orange"> {{Name}}</em></span></li> {{/each}}</ul>{{/if}}</li><li><button type="button" id="sub-order" disabled="disabled">专享购买</button></li>');
+                        }else{
+                            document.write('<li><em>购买份数：</em> <a href="javascript:void(0);" id="in-checkall"><i class="all"></i>全选</a></li><li><input type="text" name="amount" tip="输入购买份数" placeholder="输入购买份数" id="in-init"> <span class="unit">份</span></li><li><p><em>投资金额：</em>  <span><i id="in-sum">0.00</i>元</span></p><p><em>预算收益：</em>  <span><i id="in-exp">0.00</i>元</span></p><p><em>总计收益：</em>  <span><i id="in-all">0.00</i>元</span></p></li><li><button type="button" onclick="window.location.href=\'\/login?newbuy\'">登录购买</button></li>');
+                        }
+                    }else{
+                        document.write('<li><em>购买份数：</em> <a href="javascript:void(0);" id="in-checkall"><i class="all"></i>全选</a></li><li><input type="text" name="amount" tip="输入购买份数" placeholder="输入购买份数" id="in-init"> <span class="unit">份</span></li><li><p><em>投资金额：</em>  <span><i id="in-sum">0.00</i>元</span></p><p><em>预算收益：</em>  <span><i id="in-exp">0.00</i>元</span></p><p><em>总计收益：</em>  <span><i id="in-all">0.00</i>元</span></p> {{#if card}}<p><em>我的卡券：</em> <a href="javascript:void(0);" class="mcard">卡券</a></p><ul class="hide" id="cardlist">{{#each card}}<li><i class="all" data="{{DelId}}"></i> <span><em class="blue">{{Factor}} </em><em class="orange"> {{Name}}</em></span></li> {{/each}}</ul>{{/if}}</li><li><button type="button" id="sub-order">提交订单</button></li>');
+                    }
+                    
+                }
+                document.writeln('<input type="hidden" id="billorder" value="{{OrderCode}}">');
+            </script>
+            
+        </ul>
+        <input type="hidden" id="billid" value="{{billID}}">
+        <input type="hidden" id="cardid" value="">
+    </div>
+    <!--购买eof-->
+
+    
+    <div class="param-box">
+        <script>var sd = type;if(sd == 0){document.writeln('<ul><li class="on"><span>活动项目</span></li><li><span>成交记录</span></li></ul>');}else{document.writeln('<ul><li class="on"><span>项目审核</span></li><li><span>成交记录</span></li><li id="picdata"><span>项目资料</span></li><li><span>产品说明</span></li></ul>');}</script>      
+        <div class="param-center">
+            <dl class="param-1">
+                <script>
+                    var stype = type;
+                    if(stype == 4){
+                        document.writeln('<dd><em class="hcicon e-1"></em><em class="hcicon e-2"></em><em class="hcicon e-3"></em><em class="hcicon e-4"></em></dd><dd class="pro-gress"><i>已查验质押物真伪</i><i>已签订质押协议</i><i>已核查贸易背景</i><i>已签订担保协议&nbsp;&nbsp;&nbsp;</i></dd><dt><span>审核项目</span><span>审核完成状态</span><span>审核项目说明</span></dt><dd><b>营业执照</b><b class="hcicon exa">已完成</b><b class="right">****************审核</b></dd><dd><b>融资方经营资质认证</b><b class="hcicon exa">已完成</b><b class="right">*********审核</b></dd><dd><b>开户许可证</b><b class="hcicon exa">已完成</b><b class="right">************审核</b></dd><dd><b>税务登记证</b><b class="hcicon exa">已完成</b><b class="right">***************审核</b></dd><dd><b>组织机构代码证</b><b class="hcicon exa">已完成</b><b class="right">**********审核</b></dd><dd><b>信用代码证</b><b class="hcicon exa">已完成</b><b class="right">**************审核</b></dd><dd><b>经营地址、贸易背景核查</b><b class="hcicon exa">已完成</b><b class="right">*********************审核</b></dd><dd><b>支票原件、支付密码确认</b><b class="hcicon exa">已完成</b><b class="right">***********审核</b></dd><dd><b>贸易合同、保证兑付函</b><b class="hcicon exa">已完成</b><b class="right">********审核</b></dd><dd><b>票据质押合同</b><b class="hcicon exa">已完成</b><b class="right">********审核</b></dd>');
+                    }else if(stype == 0){
+                        document.writeln('<dd style="background:#fff;padding:0 0 100px;"><img src="./images/common/hc_new_01.png" alt="花橙金融"><img src="./images/common/hc_new_02.png" alt="花橙金融"><img src="./images/common/hc_new_03.png" alt="花橙金融"><img src="./images/common/hc_new_04.png" alt="花橙金融"><a href="/products?allproducts" class="hc-buy" style="width:200px;height:70px;margin:50px auto;display:block;font-size:2em;text-align:center;line-height:70px;border-radius:20px;">查看详情</a></dd>');
+                    }else if(stype == 2){
+                        document.writeln('<dd><em class="hcicon e-1"></em><em class="hcicon e-2"></em><em class="hcicon e-3"></em><em class="hcicon e-4"></em></dd><dd class="pro-gress"><i>已查验质押物真伪</i><i>已签订质押协议</i><i>已核查贸易背景</i><i>已签订担保协议&nbsp;&nbsp;&nbsp;</i></dd><dt><span>审核项目</span><span>审核完成状态</span><span>审核项目说明</span></dt><dd><b>营业执照</b><b class="hcicon exa">已完成</b><b class="right">****************审核</b></dd><dd><b>融资方经营资质认证</b><b class="hcicon exa">已完成</b><b class="right">*********审核</b></dd><dd><b>开户许可证</b><b class="hcicon exa">已完成</b><b class="right">************审核</b></dd><dd><b>税务登记证</b><b class="hcicon exa">已完成</b><b class="right">***************审核</b></dd><dd><b>组织机构代码证</b><b class="hcicon exa">已完成</b><b class="right">**********审核</b></dd><dd><b>信用代码证</b><b class="hcicon exa">已完成</b><b class="right">**************审核</b></dd><dd><b>经营地址、贸易背景核查</b><b class="hcicon exa">已完成</b><b class="right">*********************审核</b></dd><dd><b>商票真伪已查验</b><b class="hcicon exa">已完成</b><b class="right">***********审核</b></dd>');
+                    }else{
+                        document.writeln('<dt>银行审核项目</dt><dd><em class="hcicon e-1"></em><em class="hcicon e-2"></em><em class="hcicon e-3"></em><em class="hcicon e-4"></em></dd><dd class="pro-gress"><i>已查验质押物真伪</i><i>查询回复无异常</i><i>已签订质押协议</i><i>银行已托管托收&nbsp;&nbsp;&nbsp;</i></dd><dt><span>银行审核项目</span><span>审核完成状态</span><span>审核项目说明</span></dt><dd><b>营业执照</b><b class="hcicon exa">已完成</b><b class="right">****************审核</b></dd><dd><b>融资方经营资质认证</b><b class="hcicon exa">已完成</b><b class="right">*********审核</b></dd><dd><b>开户许可证</b><b class="hcicon exa">已完成</b><b class="right">************审核</b></dd><dd><b>税务登记证</b><b class="hcicon exa">已完成</b><b class="right">***************审核</b></dd><dd><b>组织机构代码证</b><b class="hcicon exa">已完成</b><b class="right">**********审核</b></dd><dd><b>信用代码证</b><b class="hcicon exa">已完成</b><b class="right">**************审核</b></dd><dd><b>经营地址、贸易背景核查</b><b class="hcicon exa">已完成</b><b class="right">*********************审核</b></dd><dd><b>银票真伪已查验</b><b class="hcicon exa">已完成</b><b class="right">***********审核</b></dd><dd><b>银行托收凭证</b><b class="hcicon exa">已完成</b><b class="right">********审核</b></dd>');
+                    }
+                </script>
+
+            </dl>
+            <dl class="param-2 hide">
+                <dt><span>订单</span><span>金额</span><span>认购方式</span><span>状态</span><span>下单时间</span></dt>
+                {{#each record}}
+                    <dd><i>{{Code}}</i><i><script>if(parseInt({{OrMoney}})=={{OrMoney}}){document.write({{OrMoney}}+'.00 元');}else{document.write({{OrMoney}} +'元');}</script></i><i>{{Type_a}}投资</i><i>支付成功</i><i>{{UpTime}}</i></dd>
+                {{/each}}
+            </dl>
+            <dl class="param-3 hide">
+                <dt>查看项目质押凭证 <script>if(stype==1){document.writeln('<a href="/collection&search" class="blue" style="font-size:14px;float:right;">(查看托收公示)</a>');}</script></dt>
+                <dd id="bill" data="{{picture}}" parma="{{Pic}}"></dd>
+            </dl>
+            <dl class="param-4 hide">
+                <script>
+                    if(stype == 4){
+                        document.writeln('<dt>花橙支票产品介绍</dt><dd><p><strong>什么是“支票宝”？</strong></p><p>“支票宝”是以优质企业真实贸易所产生的短期应收账款为前提，用支票作为质押。投资者满足企业短期内资金需求，且获得一定收益的理财产品。例：A公司于1月1日售出一批产品，价值10万元。收货的B公司需先验证产品质量，只付了2万元给A公司。其余8万元于1月20日待B公司验收完成后才能付款，于是B公司向A公司开具了一张1月20日付尾款的支票。A公司在余下货款未收回的时间内，需要再次采购原材料用于生产。故A公司以B公司开具的支票作为质押，融得不大于应收货款金额的资金，用于A公司的正常生产经营。待到期日支票兑付后，归还所借本金及支付投资者收益。</p><br/><p><strong>“支票宝”的收益和期限？</strong></p><p>“支票宝”收益略高于银票理财产品，年化收益10%-13%。期限30天内。</p><br/><p><strong>投资“支票宝”安全吗？</strong></p><p>专业风控团队实地走访，核查贸易真实性。</p><p>贸易支票质押、借款企业股东无限连带责任担保、借款企业支票保证兑付、平台资金代偿。四重保障，确保用户本息无忧。</p><br/><p>延伸阅读：支票相比其他票据的违约，所承担的法律风险更大。</p><p>个人进行票据诈骗数额在5千元以上的，属于“数额较大”;个人进行票据诈骗数额在5万元以上的，属于“数额巨大”;个人进行票据诈骗数额在10万元以上的，属于“数额特别巨大”。</p><p>单位进行票据诈骗数额在10万元以上的，属于“数额较大”;单位进行票据诈骗数额在30万元以上的，属于“数额巨大”;单位进行票据诈骗数额在100万元以上的，属于“数额特别巨大”。</p><p>刑法第一百九十四条有下列情形之一，进行金融票据诈骗活动，数额较大的，处五年以下有期徒刑或者拘役，并处二万元以上二十万元以下罚金；数额巨大或者有其他严重情节的，处五年以上十年以下有期徒刑，并处五万元以上五十万元以下罚金；数额特别巨大或者有其他特别严重情节的，处十年以上有期徒刑或者无期徒刑，并处五万元以上五十万元以下罚金或者没收财产：</p><p>（一）明知是伪造、变造的汇票、本票、支票而使用的；</p><p>（二）明知是作废的汇票、本票、支票而使用的；</p><p>（三）冒用他人的汇票、本票、支票的；</p><p>（四）签发空头支票或者与其预留印鉴不符的支票，骗取财 物的；</p><p>（五）汇票、本票的出票人签发无资金保证的汇票、本票或者在出票时作虚假记载，骗取财物的。</p></dd>');
+                    }else if(stype == 2){
+                        document.writeln('<dt>花橙商票产品介绍</dt><dd class="clear"><div class="introsp introsp-1"><p><i>1</i>商业承兑汇票是出票企业签发的，承诺在到期日无条件支付确定的金额给收款人或者持票人的票据，它是由银行以外的付款人承兑。</p></div><div class="introsp introsp-2"><p><i>2</i>商业承兑汇票的承兑人为付款企业，且商票理财项目质押物包括由银行、国有大型担保公司或大型企业集团出具保函的商业承兑汇票，即以银行信用，评级为AA以上的国有大型担保公司或财务状况良好，资产规模达百亿以上的大型企业集团为商业承兑汇票的到期足额兑付提供担保。</p></div><div class="introsp introsp-3"><p><i>3</i>花橙金融商票理财项目，是由持有商业承兑汇票的借款企业将票据质押给出借人，获得融资。</p></div><div class="introsp introsp-4"><p><i>4</i>商票理财平台众多，提醒用户选择有银行保函或担保承诺函、主动公示凭证的正规产品。谨慎购买只利用商票照片展示，无法凭证，提供相应虚假或重复融资的产品，以免您的到期资金面临兑付风险。</p></div></dd><dt>常见问题</dt><dd><ol><li class="tit">1、什么是商业承兑汇票？</li><li><p><i></i>商业承兑汇票是出票企业签发的，委托付款企业在到期日无条件支付确定的金额给收款人或者持票人的票据，它是由银行以外的付款人承兑。</p></li><li class="tit">2、什么是银行保函？</li><li><p><i></i>由银行为商业承兑汇票提供兑付保证担保，在持票人持有的商业承兑汇票到期后，若付款人不能足额兑付票面金额时，该银行将无条件地代为支付该商业承兑汇票记载的全部票面金额。银行保函保证该票据到期得到如期足额兑付。</p></li><li class="tit">3、什么是担保承诺函？</li><li><p><i></i>是担保公司、大型企业集团或其他资质优良、实力雄厚的担保方为商业承兑汇票的持票人开立的一种书面信用担保凭证，保证借款到期后，若融资企业不能足额还款时，由担保公司或大型企业集团无条件地代为偿还。大型国有担保公司和大型企业集团资金实力雄厚，担保能力极强。</p></li><li class="tit">4、商品理财安全吗？</li><li><p><i></i>商业承兑汇票做质押，融资企业到期无条件偿还，如果企业未能足额还款，则由出具保函的银行、国有大型担保公司或大型企业集团到期无条件兑付该商业承兑汇票记载的全部票面金额。</p></li><li class="tit">5、项目没有募集成功怎么办？</li><li><p><i></i>由快捷支付将已收到的资金按原路径返还给出借人。</p></li><li class="tit">6、商业承兑汇票由谁验真伪？</li><li><p><i></i>银行和相关担保方。</p></li><li class="tit">7、票据由谁保管？</li><li><p><i></i>银行或相关担保机构。</p></li><li class="tit">8、到期以后，如果借款企业无法还款，怎么办？</li><li><p><i></i>借款到期后，若借款企业无法还款，我们可以根据保函要求保兑银行/担保公司/企业集团代为偿还。</p></li><li class="tit">9、票据质押合法吗？</li><li><p><i></i>根据《票据法》第三十五条规定：汇票可以设定质押。</p></li><li class="tit">10、到期以后多少天能收到回款？</li><li><p><i></i>还款日为借款到期日后三个工作日，如需启动保函或担保承诺函等处置预案，企业将正常支付最迟还款日至实际还款日期间的利息。</p></li></ol></dd>');
+                    }else{
+                        document.writeln('<dt>花橙银票产品介绍</dt><dd><div class="intro intro-1"><p><i>1</i>                            银票宝是以借款企业未到期银行承兑汇票作为质押，向投资者提前募得资金。到期后由此银行承兑汇票兑付，归还投资者本金及利息。</p></div><div class="intro intro-2"><p><i>2</i>                            借款企业质押银票需办理银行托收。到期承兑银行无条件付款，托收银行收款。再由托收银行存管账户将本金及利息返还给投资者。</p></div><div class="intro intro-3"><p><i>3</i>本平台对质押银票实行一票一证公示，即一张质押银票对应唯一一张托收凭证。确保质押银票均有托收，保障投资者资金安全。</p></div><div class="intro intro-4"><p><i>4</i>                        银票理财平台众多，提醒用户选择正规流程托收、主动公示相应凭证的正规产品。谨慎购买只利用银票照片展示，无法提供相应凭证，虚假或重复融资的产品，以免您的到期资金面临兑付风险。</p></div></dd>');
+                    }
+                </script>
+            </dl>
+        </div>
+    </div>
+
+    <!--pop-->
+    <dl class="pop pop-detail">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>确认购买金额</dt>
+        <dd id="pop-contact">
+            
+        </dd>
+        
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+
+{{> footer}}

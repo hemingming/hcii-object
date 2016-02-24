@@ -1,0 +1,77 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            <h2><strong>邀请好友</strong></h2> 
+
+            <div class="param user-friend clear">
+                {{#friends}}
+                <h3><em class="hcuser f-1"></em><span>复制邀请码发给好友：</span> <strong>{{Spread}}</strong></h3>
+                <p><em class="hcuserf-2"></em><span>复制链接发给好友：</span> <a href="http://www.hcii.cn/?friend={{Spread}}" target="_blank">http://www.hcii.cn/?friend={{Spread}}</a></p>
+                {{/friends}}
+                <p><em class="hcuserf-2"></em><span>已推荐人数：</span> <strong>{{number}}</strong></p>
+                {{!
+                <div class="user-rank clear">
+                    <div class="rank">
+                        <h4>花橙邀请排行榜达人</h4>
+                        <dl class="clear">
+                            
+                            <dt><span>排名</span><span>投资人</span><span>邀请人数</span></dt>
+                            <dd><i class="hcuser rank-1"></i><b>1</b><i>138********</i><em>80人</em></dd>
+                            <dd><i class="hcuser rank-2"></i><b>2</b><i>138********</i><em>70人</em></dd>
+                            <dd><i class="hcuser rank-3"></i><b>3</b><i>138********</i><em>56人</em></dd>
+                            <dd><b>4</b><i>138********</i><em>33人</em></dd>
+                            <dd><b>5</b><i>138********</i><em>20人</em></dd>
+                            <dd><b>6</b><i>138********</i><em>20人</em></dd>
+                            <dd><b>7</b><i>138********</i><em>20人</em></dd>
+                            <dd><b>8</b><i>138********</i><em>20人</em></dd>
+                            <dd><b>9</b><i>138********</i><em>20人</em></dd>
+                            <dd><b>10</b><i>138********</i><em>20人</em></dd>
+                        </dl>
+                    </div>
+
+                    <div class="mine-rank">
+                        <h4>我的邀请记录</h4>
+                        <dl class="clear">
+                            <dt><span>好友</span><span>注册时间</span><span>奖励金额</span></dt>
+                            <dd><b>138********</b><i>2015-12-10</i> <em>10元</em></dd>
+                            <dd><b>138********</b><i>2015-12-10</i> <em>10元</em></dd>
+                            <dd><b>138********</b><i>2015-12-10</i> <em>10元</em></dd>
+                            <dd><b>138********</b><i>2015-12-10</i> <em>10元</em></dd>
+                            <dd><b>138********</b><i>2015-12-10</i> <em>10元</em></dd>
+                            <dd><b>138********</b><i>2015-12-10</i> <em>10元</em></dd>
+                            <dd><b>138********</b><i>2015-12-10</i> <em>10元</em></dd>
+                        </dl>
+                    </div>
+                </div>
+                }}
+
+                <ul>
+                    <h4>邀请规则</h4>
+                    <li>1. 邀请绑定的手机号需是未在花橙金融使用过的手机，并且手机号归属地为中国大陆地区。</li>
+                    <li>2. 同一手机号码只能在第一次被绑定的时候赠送红包。如果发现任何作弊行为，我们将取消用户获得奖励的资格。</li>
+                    <li>3. 更多邀请好友奖励活动，请参看平台活动详情。</li>
+                </ul>
+            </div>
+
+
+        </div>
+
+    </div>
+    <!--用户中心eof-->
+
+
+
+{{> userfooter}}

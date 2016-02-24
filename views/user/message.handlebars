@@ -1,0 +1,42 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            <h2><strong>消息中心</strong></h2> 
+
+            <div class="user-found user-news">
+                <ul>
+                    {{#messages}}
+                    <li><a href="javascript:void(0);">{{Name}}</a><em>{{UpTime}}</em></li>
+                    <div class="message hide">
+                        {{Content}}
+                    </div>
+                    {{/messages}}
+
+                </ul>
+                {{!
+                <div class="user-handle"> <input type="checkbox">全选  <button class="hc-sale">未读消息</button> <button class="hc-buy">标记已读</button> <button class="hc-end">删除</button></div>
+                }}
+            </div>
+
+
+        </div>
+
+    </div>
+    <!--用户中心eof-->
+
+
+
+{{> userfooter}}

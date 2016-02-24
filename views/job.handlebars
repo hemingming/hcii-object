@@ -1,0 +1,59 @@
+{{!--新手指引--}}
+{{#section 'header'}}
+    {{> othertop}}
+    {{> head}}
+{{/section}}
+
+    <div id="container">
+        <div class="question clear">
+            <dl class="bar">
+                <dt class="clear">
+                <ul>
+                    <li><a href="/about">关于我们</a></li>
+                    <li><a href="/help">新手指引</a></li>
+                    <li><a href="/question">常见问题</a></li>
+                    <li><a href="/news">花橙新闻</a></li>
+                    <li><a href="/reports">媒体报道</a></li>
+                    <li><a href="/collection">托收公示</a></li>
+                    <li><a class="on" href="/job">加入花橙</a></li>
+                    <li><a href="/service">联系我们</a></li>
+                </ul>
+                </dt>
+                <dd>
+                    <strong class="qicon">花橙金融 理财平台</strong>
+                    <img src="images/banner/hc_banner_02.jpg" alt="花橙金融微信号">
+                </dd>
+            </dl>
+
+
+            <dl class="job">
+                <dt>
+                    <h2 class="orange">招贤纳士</h2>
+                </dt>
+                <dd>
+                    <img src="images/other/job_01.jpg" alt="花橙金融招贤纳士">
+                </dd>
+                <dd>
+                    <h3>加入我们</h3>
+                    <p>
+                        <strong>团队就是力量</strong><br/>
+                        在这里，你将拥有一起奋斗的团队伙伴！<br/>最快的发展平台，最贴心完善的福利，当然还有更加丰厚的报酬！
+                    </p>
+                    
+                </dd>
+                <dd>
+                    <ul id="hiddenresult" style="display:none;">
+                        {{#news}}
+                        <li><a href="/hcdetails&{{DelId}}">{{Name}} <span>{{UpTime}}</span></a></li>
+                        {{/news}}
+                    </ul>
+                    <ul id="searchresult"></ul>
+                </dd>
+                    <!--Page-->
+                    <div id="pagination" class="pages"></div>
+                    <!--Page eof-->
+            </dl>
+        </div>
+    </div>
+    
+{{> footer}}

@@ -1,0 +1,47 @@
+{{!--托收公示--}}
+{{#section 'header'}}
+    {{> othertop}}
+    {{> head}}
+{{/section}}
+
+    <div id="container">
+        <div class="question clear">
+            <dl class="bar">
+                <dt class="clear">
+                <ul>
+                    <li><a href="/about">关于我们</a></li>
+                    <li><a href="/help">新手指引</a></li>
+                    <li><a href="/question">常见问题</a></li>
+                    <li><a href="/news">花橙新闻</a></li>
+                    <li><a href="/reports">媒体报道</a></li>
+                    <li><a href="/collection">托收公示</a></li>
+                    <li><a href="/job">加入花橙</a></li>
+                    <li><a href="/service">联系我们</a></li>
+                </ul>
+                </dt>
+                <dd>
+                    <strong class="qicon">花橙金融 理财平台</strong>
+                    <img src="../images/banner/hc_banner_02.jpg" alt="花橙金融微信号">
+                </dd>
+            </dl>
+
+            <dl class="job">
+                <dt>
+                    <h2 class="orange">回款凭证 <i class="gry" style="float:right;font-size:14px;"></i></h2>
+                </dt>
+                <dd>
+                    <ul id="hiddenresult" style="display:none;">
+                        {{#news}}
+                        <li><a href="/hcdetails&{{DelId}}">{{Name}} <span>{{UpTime}}</span></a></li>
+                        {{/news}}
+                    </ul>
+                    <ul id="searchresult"></ul>
+                </dd>
+                <!--Page-->
+                <div id="pagination" class="pages"></div>
+                <!--Page eof-->
+            </dl>
+        </div>
+    </div>
+    
+{{> footer}}

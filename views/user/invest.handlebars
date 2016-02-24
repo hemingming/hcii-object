@@ -1,0 +1,156 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+        
+        <div class="user-main">
+            <h2><strong>投资管理</strong></h2> 
+            <ul class="user-menu invest">
+                <li class="on">全部订单</li>
+                <li>已起息</li>
+                <li>已还款</li>
+                
+            </ul>
+
+            <div class="user-found invest">
+                <a href="javascript:void(0);" class="blue" style="position:absolute;right:10px;top:15px;font-size:14px;z-index:2;" id="tranrule">债权转让规则&gt;&gt;</a>
+                <div class="param">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>订单编号</th>
+                                <th>类型</th>
+                                <th>实际金额</th>
+                                <th>实际利息</th>
+                                <th>订单金额</th>
+                                <th>订单利息</th>
+                                <th>投资天数</th>
+                                <th>状态</th>
+                                <th>详细</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <img src="images/common/load.gif" id="pageload">
+
+                        </tbody>    
+                    </table>
+                </div>
+
+                <div class="param hide">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>订单编号</th>
+                                <th>类型</th>
+                                <th>实际金额</th>
+                                <th>实际利息</th>
+                                <th>订单金额</th>
+                                <th>订单利息</th>
+                                <th>投资天数</th>
+                                <th>状态</th>
+                                <th>详细</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                        
+                        </tbody>    
+                    </table>
+                </div>
+
+                <div class="param hide">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>订单编号</th>
+                                <th>类型</th>
+                                <th>实际金额</th>
+                                <th>实际利息</th>
+                                <th>订单金额</th>
+                                <th>订单利息</th>
+                                <th>投资天数</th>
+                                <th>状态</th>
+                                <th>详细</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+                        </tbody>    
+                    </table>
+                </div>
+
+
+                <div id="pagination" class="pages"></div>
+                <input type="hidden" value="{{pagecount}}" id="pagecount">
+            </div>
+
+
+        </div>
+    </div>
+    <!--用户中心eof-->
+
+    <!--pop-->
+    <dl class="pop user-invest">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>投资转让</dt>
+        <dd id="pop-contact">
+        {{!
+            <ul class="line clear">
+                <li><label>产品名称：</label><em id="bname">花橙银票</em></li>
+                <li><label>订单编号：</label><em id="border">HCYP201523324098234</em></li>
+                <li>
+                    <em class="line-r"><label>投资金额：</label><b class="blue f-t" id="a-amount">100000.00 </b> 元</em> 
+                    <em class="line-r"><label>投资周期：</label><b id="cycle">50</b> 天</em>
+                </li>
+                <li>
+                    <em class="line-r"><label>到期收益：</label><b class="blue f-t" id="b-profit">1112.33</b> 元</em>
+                    <label>剩余收益：</label><span><b class="blue f-t" id="f-profit-s">0.00</b> 元</span>
+                <li>
+                    <em class="line-r"><label>购买日期：</label>2015-10-22</em> <em><label>到期日期：</label>2015-11-22</em>
+                </li>
+                
+            </ul>
+             <ul class="line">
+                <li><h2>转让预算</h2></li>
+                <li><label>已投周期：</label><span><b id="days-y">10</b> 天</span> <strong>剩余周期：</strong><span><b id="days">40</b> 天</span></li>
+                <li>
+                    <label>已赚收益：</label><span><b class="blue f-t" id="f-profit-y">0.00</b> 元</span>
+                    <strong>转让金额：</strong><span><b class="amount f-t" id="f-amount">100000.00 </b> 元</span>
+                </li>
+                <li>
+                    <label>补贴收益：</label><span><b class="blue f-t"  id="f-profit-b">0.00</b> 元</span>
+                    <strong>转让收益：</strong><span><b class="profit f-t" id="f-profit">111.23</b> 元</span>
+                </li>
+                <li>
+                    <label>年化利率：</label><span><em id="rate">8.12</em> %</span> 
+                    <strong>转让利率：</strong><em><input type="text" id="amount" class="orange"></em>%
+                </li>
+                <li><div id="transfer-max"></div></li>
+            </ul>
+            <dd id="user-pay">
+                <ul>
+                    <li><span>交易密码：</span><em><input type="password" name="pay" class="pay" id="payment"> <a href="/user-safety"> &nbsp;忘记交易密码？</a></em></li>
+                   
+                    <li><span>&nbsp;</span><em><button type="button" id="totransfer">确认转让</button></em></li>
+                </ul>  
+            </dd>
+            }}
+        </dd>
+
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+{{> userfooter}}

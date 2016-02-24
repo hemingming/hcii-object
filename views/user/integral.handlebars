@@ -1,0 +1,118 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            <h2><strong>积分换购</strong></h2> 
+            <ul class="user-menu user-integral">
+                <li class="on">积分换购</li>
+                <li>换购记录</li>
+            </ul>
+
+            <div class="param user-integral clear">
+                <dl>
+                    <dt><img src=""></dt>
+                    <dd>iphone6s</dd>
+                    <dd>积分兑换：<em>20000<i>分</i></em></dd>
+                    <dd>余额购买：<strong>1000<i>元</i></strong></dd>
+                    <dd>剩余份数：<b>200<i>个</i></b></dd>
+                    <dd><button class="hc-buy integral-button">兑换</button></dd>
+                </dl>
+                <dl>
+                    <dt><img src=""></dt>
+                    <dd>iphone6s</dd>
+                    <dd>积分兑换：<em>20000<i>分</i></em></dd>
+                    <dd>余额购买：<strong>1000<i>元</i></strong></dd>
+                    <dd>剩余份数：<b>200<i>个</i></b></dd>
+                    <dd><button class="hc-buy integral-button">兑换</button></dd>
+                </dl>
+                <dl>
+                    <dt><img src=""></dt>
+                    <dd>iphone6s</dd>
+                    <dd>积分兑换：<em>20000<i>分</i></em></dd>
+                    <dd>余额购买：<strong>1000<i>元</i></strong></dd>
+                    <dd>剩余份数：<b>200<i>个</i></b></dd>
+                    <dd><button class="hc-buy integral-button">兑换</button></dd>
+                </dl>
+                <dl>
+                    <dt><img src=""></dt>
+                    <dd>iphone6s</dd>
+                    <dd>积分兑换：<em>20000<i>分</i></em></dd>
+                    <dd>余额购买：<strong>1000<i>元</i></strong></dd>
+                    <dd>剩余份数：<b>200<i>个</i></b></dd>
+                    <dd><button class="hc-buy integral-button">兑换</button></dd>
+                </dl>
+                <dl>
+                    <dt><img src=""></dt>
+                    <dd>iphone6s</dd>
+                    <dd>积分兑换：<em>20000<i>分</i></em></dd>
+                    <dd>余额购买：<strong>1000<i>元</i></strong></dd>
+                    <dd>剩余份数：<b>200<i>个</i></b></dd>
+                    <dd><button class="hc-buy integral-button">兑换</button></dd>
+                </dl>
+
+            </div>
+            <div class="param user-integral hide">
+                <p><span>兑换名称</span> <span>兑换时间</span></p>
+                <ul>
+                    <li><b>理财红包</b> <em>2015-12-25 12:2:20</em></li>
+                    <li><b>ipad 2</b> <em>2015-12-25 12:2:20</em></li>
+                    <li><b>理财红包</b> <em>2015-12-25 12:2:20</em></li>
+                    <li><b>ipad 2</b> <em>2015-12-25 12:2:20</em></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <!--用户中心eof-->
+
+    <!--pop-->
+    <dl class="pop integral">
+        <a href="javascript:;" class="hcicon close">关闭</a>
+        <dt>物品换购</dt>
+        <dd>
+            <div class="p-integral line clear">
+                <ul>
+                    <li class="u-pic"><img src=""></li>
+
+                </ul>
+                <ul>
+                    <li>物品名称：iphone6s</li>
+                    <li>积分换购：20000 分</li>
+                    <li>余额购买：200 元</li>
+                    <li>剩余份数：20 份</li>
+                </ul>
+            </div>
+
+             <ul class="line clear">
+                <li><span>我的余额：</span> <em class="amount f-t">10,000.00 </em> 元</li>
+                <li><span>我的积分：</span> <em class="amount f-t">200</em> 分</li>
+                <li><span>换购方式：</span> <a href="javascript:;" class="mode choice">积分换购</a> <a href="javascript:;" class="mode">余额购买</a> </li>
+                <li><span>换购份数：</span> <em><a href="javascript:;" class="min">-</a><input name="number" type="text" class="pay number" value="1" id="c-num"> <a href="javascript:;" class="max">+</a></em></li>
+            </ul>
+            <ul class="clear">
+                <li><span>收货人姓名：</span> <input name="number" type="text" class="pay name"></li>
+                <li><span>收货人电话：</span> <input name="number" type="text" class="pay tel"></li>
+                <li><span>收货人地址：</span> <input name="number" type="text" class="pay address"></li>
+                <li><span>交易密码：</span><em><input type="password" name="pay" class="pay"> <a href="#">忘记交易密码？</a></em></li>
+                
+                <li><span>&nbsp;</span><em><button type="button">确认换购</button></em></li>
+            </ul>  
+        </dd>
+    </dl>
+    <div class="black"></div>
+    <!--pop eof-->
+
+{{> userfooter}}

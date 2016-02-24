@@ -1,0 +1,33 @@
+        <div class="user-nav" id="userinfo">
+            <dl>
+                <dt class="userhead userpicture"></dt>
+                <dd class="user-name">欢迎您，<b>{{username}}</b></dd>
+                <dd>
+                    <span>理财达人：</span>
+                    <strong class="user-level user-tip" id="level">{{level}}<em id="user-tip" style="display: none;"><i></i>投资等级</em></strong>
+                </dd>
+                <dd><span class="orange">花橙积分：</span><em id="inte">{{uintegral}}</em></dd>
+            </dl>
+
+            <ul>
+                <li class="{{user}}"><a href="/usercenter">我的钱包</a></li>
+                <li class="{{fund}}"><a href="./user-fund">资金管理</a>
+                    <ul class="hide">
+                        <li><a href="/user-fund">资金记录</a></li>
+                        <li><a href="/user-recharge">充 值</a></li>
+                        <li><a href="/user-withdraw">提 现</a></li>
+                    </ul>
+                </li>
+                <li class="{{invest}}"><a href="/user-invest">投资订单</a></li>
+                <li class="{{safety}}"><a href="/user-safety">帐户安全</a></li>
+                <li class="{{intell}}"><a href="/user-intell">智能投资</a></li>
+                <li class="{{card}}"><a href="/user-card">我的卡券</a></li>
+                <li class="{{message}}"><a href="/user-message">消息中心</a></li>
+                <li class="{{friend}}"><a href="/user-friend">邀请好友</a></li>
+                <!--<li class="{{integral}}"><a href="/user-integral">积分换购</a></li>-->
+                <li class="{{information}}"><a href="/user-information">帐户设置</a></li>
+            </ul>
+        </div>
+        <input type="hidden" id="user-pic" value="{{userpicture}}">
+        <input type="hidden" id="user-level" value="{{level}}">
+        <input type="hidden" id="user-inte" value="{{uintegral}}">

@@ -1,0 +1,54 @@
+{{#section 'style'}}
+    <link rel="stylesheet" href="{{static '/styles/hc-reset.css'}}"/>
+    <link rel="stylesheet" href="{{static '/styles/hc-user.css'}}"/>
+{{/section}}
+
+{{#section 'header'}}
+    {{> usertop}}
+    {{> head}}
+{{/section}}
+
+
+    <!--用户中心-->
+    <div class="container clear user-center">
+        {{> userinfo}}
+
+        <div class="user-main">
+            <h2><strong>红包卡券</strong></h2> 
+            <ul class="user-menu user-card" id="usercard">
+                {{!<li>未领取</li>}}
+                <li class="on">未使用</li>
+                <li>已使用</li>
+                <li>已过期</li>
+            </ul>
+            
+            <div class="param usercard clear">
+                {{!each cards
+
+                /each}}
+            </div>
+            <div class="param usercard hide clear">
+
+            </div>
+            <div class="param usercard hide clear">
+
+            </div>
+            <p style="text-align:left;padding:20px;color:#666;font-size:14px;">卡券使用说明：<br/>
+            卡券使用要求最低1元认购金额。<br/>
+            加息卡：年化收益率加成，到期收益可提现。<br/>
+            代金券：虚拟本金，到期虚拟本金收回，收益可提现。<br/>
+            本金卡：增加本金，本金卡本金不计息，到期本金卡本金可提现。<br/>
+            加速卡：增加计息天数，到期收益可提现。<br/>
+            多倍本金卡：按投资金额的一定比例，获得到期额外本金，此本金到期可提现。</p>
+
+            <div id="pagination" class="pages"></div>
+            <input type="hidden" value="{{pagecount}}" id="pagecount">
+            
+        </div>
+
+    </div>
+    <!--用户中心eof-->
+
+
+
+{{> userfooter}}
